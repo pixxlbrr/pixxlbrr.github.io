@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<link rel="icon" type="image/svg+xml" href="">-->
+<meta name="description" content="A quick, intuitive and aesthetic timetable experience.">
+<title>Timetable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Outfit:wght@100..900&family=Lexend+Deca:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=BioRhyme:wght@200..800&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-image-layer" id="bg-image-layer" aria-hidden="true"></div>
+
+<div class="app">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">
+        <!--tM-->
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.9" stroke-linecap="square" stroke-linejoin="square">
+          <path d="M1,15 L23,15 M15,1 L15,23"></path>
+        </svg>
+      </span>
+      <span class="brand-name">tMed</span>
+    </div>
+
+    <div class="scenario-picker">
+      <label for="scenario-input">Scenario group</label>
+      <div class="scenario-input-wrap">
+        <input type="text" id="scenario-input" placeholder="e.g. A1" autocomplete="off" spellcheck="false" maxlength="4">
+      </div>
+    </div>
+
+    <button class="icon-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Appearance settings">
+      <!--<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18.7 3.9c1 1 1 2.6 0 3.6l-6.9 6.9-3.5-3.5 6.9-6.9c1-1 2.5-1 3.5-.1Z"></path>
+        <path d="M11.8 12.4 5.4 18.7c-.6.6-1.5 1.9-1.9 3.1-.1.4.2.7.6.6 1.2-.4 2.5-1.3 3.1-1.9l6.3-6.3"></path>
+        <circle cx="4.3" cy="20.3" r="1.35"></circle>
+      </svg>-->
+      <i class="fa fa-paint-brush"></i>
+    </button>
+  </header>
+
+  <!-- ============ SETTINGS PANEL ============ -->
+  <aside class="settings-panel" id="settings-panel" aria-hidden="true">
+    <div class="settings-panel-head">
+      <h2>Appearance</h2>
+      <button class="icon-btn" id="settings-close" title="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="settings-group">
+      <h3>Colours</h3>
+      <label class="color-row">
+        <span>Background</span>
+        <span class="color-controls">
+          <input type="text" class="hex-input" id="hex-bg" value="#f6f3ee" maxlength="7" spellcheck="false" aria-label="Background hex code">
+          <input type="color" id="color-bg" value="#f6f3ee">
+        </span>
+      </label>
+      <label class="color-row">
+        <span>Surface / cards</span>
+        <span class="color-controls">
+          <input type="text" class="hex-input" id="hex-surface" value="#ffffff" maxlength="7" spellcheck="false" aria-label="Surface hex code">
+          <input type="color" id="color-surface" value="#ffffff">
+        </span>
+      </label>
+      <label class="color-row">
+        <span>Text</span>
+        <span class="color-controls">
+          <input type="text" class="hex-input" id="hex-text" value="#1e1b16" maxlength="7" spellcheck="false" aria-label="Text hex code">
+          <input type="color" id="color-text" value="#1e1b16">
+        </span>
+      </label>
+      <label class="color-row">
+        <span>Muted text</span>
+        <span class="color-controls">
+          <input type="text" class="hex-input" id="hex-text-dim" value="#5b6472" maxlength="7" spellcheck="false" aria-label="Muted text hex code">
+          <input type="color" id="color-text-dim" value="#5b6472">
+        </span>
+      </label>
+      <label class="color-row">
+        <span>Accent</span>
+        <span class="color-controls">
+          <input type="text" class="hex-input" id="hex-accent" value="#a13d2f" maxlength="7" spellcheck="false" aria-label="Accent hex code">
+          <input type="color" id="color-accent" value="#a13d2f">
+        </span>
+      </label>
+      <label class="color-row">
+        <span>Border</span>
+        <span class="color-controls">
+          <input type="text" class="hex-input" id="hex-border" value="#e4e0dd" maxlength="7" spellcheck="false" aria-label="Border hex code">
+          <input type="color" id="color-border" value="#e4e0dd">
+        </span>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <h3>Presets</h3>
+      <div class="preset-row" id="preset-row">
+        <button class="preset-swatch" data-preset="light" style="--sw1:#f1f1f1;--sw2:#535672;--sw3:#1b2430">light</button>
+        <button class="preset-swatch" data-preset="paper" style="--sw1:#fffaf5;--sw2:#7f2121;--sw3:#1b2430">paper</button>
+        <button class="preset-swatch" data-preset="milk" style="--sw1:#fffbf3;--sw2:#ecdec5;--sw3:#7d684f">milk</button>
+        <button class="preset-swatch" data-preset="sky" style="--sw1:#e1f2ff;--sw2:#91cdf7;--sw3:#071a26">sky</button>
+        <button class="preset-swatch" data-preset="strawberry" style="--sw1:#ffc2d4;--sw2:#721218;--sw3:#FFFFFF">strawberry</button>
+        <button class="preset-swatch" data-preset="taro" style="--sw1:#e4d6ff;--sw2:#ab8ef0;--sw3:#FFFFFF">taro</button>
+        <button class="preset-swatch" data-preset="matcha" style="--sw1:#92ba88;--sw2:#6d5450;--sw3:#f0fff7">matcha</button>
+        <button class="preset-swatch" data-preset="hot_choc" style="--sw1:#bf9e87;--sw2:#e9b4f6;--sw3:#f0fff7">hot choc</button>
+        <button class="preset-swatch" data-preset="ocean" style="--sw1:#081739;--sw2:#329fb7;--sw3:#e9ecf2">ocean</button>
+        <button class="preset-swatch" data-preset="tapioca" style="--sw1:#211730;--sw2:#cdaa8b;--sw3:#e0cea8">tapioca</button>
+        <button class="preset-swatch" data-preset="sunset" style="--sw1:#0a021a;--sw2:#e08c7d;--sw3:#ffc0a3">sunset</button>
+        <button class="preset-swatch" data-preset="ink" style="--sw1:#171a21;--sw2:#23d0ce;--sw3:#e9ecf2">ink</button>
+        <button class="preset-swatch" data-preset="midnight" style="--sw1:#0a0d16;--sw2:#d1029c;--sw3:#e9ecf2">midnight</button>
+        <button class="preset-swatch" data-preset="matrix" style="--sw1:#000000;--sw2:#ff0000;--sw3:#00ff00">matrix</button>
+        <button class="preset-swatch" data-preset="dark" style="--sw1:#101010;--sw2:#888dba;--sw3:#d7d7d7">dark</button>
+        <!-- saved custom presets are injected here by script.js -->
+      </div>
+      <div class="save-preset-row">
+        <input type="text" id="preset-name-input" placeholder="Name your theme" maxlength="24">
+        <button class="save-preset-btn" id="save-preset-btn" type="button" title="Save theme">Save theme</button>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <h3>Background image</h3>
+      <div class="bg-image-upload-row">
+        <label class="bg-image-upload-btn" for="bg-image-input">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+          Upload image
+        </label>
+        <input type="file" id="bg-image-input" accept="image/*" hidden>
+        <button class="bg-image-remove-btn" id="bg-image-remove" type="button" hidden>Remove</button>
+      </div>
+      <div class="bg-image-preview" id="bg-image-preview" hidden></div>
+      <label class="field-row">
+        <span>Image opacity</span>
+        <span class="range-controls">
+          <input type="range" id="bg-image-opacity" min="0" max="100" value="40">
+          <span class="pct-field"><input type="text" class="pct-input" id="pct-bg-image-opacity" value="40" maxlength="3" inputmode="numeric" spellcheck="false" aria-label="Image opacity percentage">%</span>
+        </span>
+      </label>
+      <label class="field-row">
+        <span>Timetable opacity</span>
+        <span class="range-controls">
+          <input type="range" id="timetable-opacity" min="0" max="100" value="100">
+          <span class="pct-field"><input type="text" class="pct-input" id="pct-timetable-opacity" value="100" maxlength="3" inputmode="numeric" spellcheck="false" aria-label="Timetable opacity percentage">%</span>
+        </span>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <h3>Typography</h3>
+      <label class="field-row">
+        <span>Heading font</span>
+        <select id="font-heading">
+          <option value="'Inter'">Inter</option>
+          <option value="'Source Sans 3'">Source Sans 3</option>
+          <option value="'Roboto'">Roboto</option>
+          <option value="'Atkinson Hyperlegible', sans-serif">Atkinson Hyperlegible</option>
+          <option value="'Rubik'">Rubik</option>
+          <option value="'Work Sans'">Work Sans</option>
+          <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+          <option value="'Lato'">Lato</option>
+          <option value="'Source Serif 4'">Source Serif 4</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="'Cormorant'">Cormorant</option>
+          <option value="'Fraunces'">Fraunces (serif)</option>
+          <option value="'Roboto Mono'">Roboto Mono</option>
+          <option value="'BioRhyme'">BioRhyme</option>
+          <option value="'IBM Plex Mono', monospace">IBM Plex Mono</option>
+        </select>
+      </label>
+      <label class="field-row">
+        <span>Body font</span>
+        <select id="font-body">
+          <option value="'Inter'">Inter</option>
+          <option value="'Source Sans 3'">Source Sans 3</option>
+          <option value="'Roboto'">Roboto</option>
+          <option value="'Atkinson Hyperlegible', sans-serif">Atkinson Hyperlegible</option>
+          <option value="'Rubik'">Rubik</option>
+          <option value="'Work Sans'">Work Sans</option>
+          <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+          <option value="'Lato'">Lato</option>
+          <option value="'Source Serif 4'">Source Serif 4</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="'Cormorant'">Cormorant</option>
+          <option value="'Fraunces'">Fraunces (serif)</option>
+          <option value="'Roboto Mono'">Roboto Mono</option>
+          <option value="'BioRhyme'">BioRhyme</option>
+          <option value="'IBM Plex Mono', monospace">IBM Plex Mono</option>
+        </select>
+      </label>
+      <label class="field-row" style="display: none;">
+        <span>Text size</span>
+        <span class="range-controls">
+          <input type="range" id="font-scale" min="85" max="120" value="100">
+          <span class="pct-field"><input type="text" class="pct-input" id="pct-font-scale" value="100" maxlength="3" inputmode="numeric" spellcheck="false" aria-label="Text size percentage">%</span>
+        </span>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <h3>Event colours</h3>
+      <div id="cat-colors"><!-- built by script.js --></div>
+    </div>
+
+    <button class="reset-btn" id="settings-reset">Reset to defaults</button>
+  </aside>
+  <div class="scrim" id="settings-scrim" hidden></div>
+
+  <!-- ============ CONTROL BAR ============ -->
+  <div class="controlbar">
+    <div class="week-nav">
+      <button class="nav-btn" id="prev-week" title="Previous week">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="nav-btn" id="next-week" title="Next week">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <button class="today-btn" id="today-week" title="Jump to this week">Today</button>
+      <div class="week-label" id="week-label">Week</div>
+      <label class="toggle toggle-weekend-inline">
+        <input type="checkbox" id="toggle-weekend">
+        <span class="toggle-box" style="--dot:#6b7280;"></span>
+        7-day week
+      </label>
+    </div>
+
+    <div class="toggles">
+      <div class="toggle-group" id="cbs-toggles">
+        <button class="cbs-info-btn" id="cbs-info-toggle" aria-expanded="false" aria-controls="cbs-info-blurb" title="About CBS">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"></circle>
+            <line x1="12" y1="11" x2="12" y2="16.5"></line>
+            <circle cx="12" cy="7.6" r="0.9" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </button>
+        <span class="toggle-group-label">CBS:</span>
+        <!-- individual activity checkboxes built by script.js -->
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-medsoc">
+        <span class="toggle-box" style="--dot: var(--cat-medsoc);"></span>
+        MedSoc events
+      </label>
+        <div class="cbs-info-blurb" id="cbs-info-blurb" hidden>
+          <p>Campus Bible Study is a group of people at UNSW who are interested in learning together about Jesus from the Bible. Whether you follow Jesus, or want to find out what he's all about, CBS is a great place for you to learn more! <a href="https://campusbiblestudy.org/">Find out more</a></p>
+        </div>
+    </div>
+  </div>
+
+  <!-- ============ CBS INFO BLURB (sibling of .toggles, toggled by the info icon) ============ -->
+
+
+  <!-- ============ EMPTY STATE (no group selected) ============ -->
+  <div class="empty-state" id="empty-state">
+    <p>Choose your scenario group above to load your timetable.</p>
+  </div>
+
+  <!-- ============ TIMETABLE GRID ============ -->
+  <main class="timetable-wrap" id="timetable-wrap" hidden>
+    <div class="timetable" id="timetable">
+      <!-- built by script.js -->
+    </div>
+  </main>
+
+  <!-- ============ LEGEND ============ -->
+  <footer class="legend" id="legend" hidden></footer>
+
+  <!-- ============ DISCLAIMER ============ -->
+  <p class="disclaimer">This timetable comes with no guarantee of accuracy. Always cross-check your classes with eMed. If you find any disparities or have any queries, please <a href="mailto:myname@mybusiness.com">contact us</a>.</p>
+
+</div>
+
+<!-- ============ EVENT DETAIL POPOVER ============ -->
+<div class="event-popover" id="event-popover" hidden>
+  <button class="popover-close" id="popover-close" aria-label="Close">&times;</button>
+  <div class="popover-body" id="popover-body"></div>
+</div>
+<div class="scrim" id="popover-scrim" hidden></div>
+
+<script src="classes.js"></script>
+<script src="cbs_events.js"></script>
+<script src="medsoc_events.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
