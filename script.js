@@ -155,8 +155,14 @@
   function fmtDayDate(date) {
     return date.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
   }
+  // True when the window is narrower than 480px (compact labels)
+  const compactMQ = window.matchMedia("(max-width: 581.98px)");
   function fmtWeekRange(monday, numDays) {
     const lastDay = addDays(monday, numDays - 1);
+    if (compactMQ.matches) {
+      const short = (d) => `${d.getDate()}/${d.getMonth() + 1}`;
+      return `${short(monday)}–${short(lastDay)}/${String(lastDay.getFullYear()).slice(-2)}`;
+    }
     const sameMonth = monday.getMonth() === lastDay.getMonth();
     const optsFull = { day: "numeric", month: "short", year: "numeric" };
     const optsShort = { day: "numeric" };
@@ -181,9 +187,11 @@
   function fmtWeekLabel(monday, numDays) {
     const range = fmtWeekRange(monday, numDays);
     const info = getTermWeekInfo(monday);
-    const label = info ? `Term ${info.term} Week ${info.week}` : "Break";
-    const rangeSpan = `<span class="week-range">  |  ${range}</span>`;
-    return `${label} ${rangeSpan}`;
+    const label = info
+      ? (compactMQ.matches ? `T${info.term}W${info.week}` : `Term ${info.term} Week ${info.week}`)
+      : "Break";
+    const rangeSpan = `<span class="week-range"> | ${range}</span>`;
+    return `${label}${rangeSpan}`;
   }
 
   /* ============================================================
@@ -1354,6 +1362,12 @@
 
     wireControls();
     render();
+    // Re-render the header label when crossing the 480px breakpoint
+    const onCompactChange = () => {
+      if (state.weekStart) $("#week-label").innerHTML = fmtWeekLabel(state.weekStart, state.showWeekends ? 7 : 5);
+    };
+    if (compactMQ.addEventListener) compactMQ.addEventListener("change", onCompactChange);
+    else compactMQ.addListener(onCompactChange);
     loadVerseOfDay();
   }
 

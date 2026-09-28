@@ -445,7 +445,7 @@ button, select, input{ font-family: inherit; color: inherit; }
 }
 
 .week-nav{ display:flex; align-items:center; gap: .9rem; flex-wrap: wrap; }
-.toggle-weekend-inline{ margin-left: .3rem; }
+.toggle-weekend-setting{ padding: .4rem 0; font-size: .9rem; }
 .nav-btn{
   display:inline-flex; align-items:center; justify-content:center;
   width: 2.1rem; height: 2.1rem;
