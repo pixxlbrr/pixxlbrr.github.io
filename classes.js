@@ -1618,9 +1618,9 @@ const classes = [
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
-        date: "06/10/2026",
-        start: "11:00",
-        end: "12:00",
+        date: "07/10/2026",
+        start: "12:00",
+        end: "13:00",
         type: "T4",
         title: "Pathology stroke",
         teachers: "Martin Weber",
