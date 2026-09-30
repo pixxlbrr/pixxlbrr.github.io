@@ -256,7 +256,7 @@ button, select, input{ font-family: inherit; color: inherit; }
   border-radius: 6px;
   padding: .3rem .5rem;
   background: var(--bg);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Roboto Mono';
   font-size: .78rem;
   text-transform: uppercase;
   letter-spacing: .02em;
