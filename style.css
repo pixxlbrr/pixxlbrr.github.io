@@ -583,32 +583,55 @@ button, select, input{ font-family: inherit; color: inherit; }
 
 /* ============ TIMETABLE GRID ============ */
 .timetable-wrap{
-  overflow-x:auto;
+  --sbw: 0px; /* vertical scrollbar width of the body, measured by script.js */
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: var(--surface); /* fallback for browsers without color-mix() */
   background: color-mix(in srgb, var(--surface) calc(var(--timetable-opacity, 1) * 100%), transparent);
   box-shadow: var(--shadow);
-  overflow-y: scroll;
   height: 800px;
 }
+/* Day-header strip: never scrolls vertically, so the body's scrollbar starts
+   below it. Its horizontal position is mirrored from the body via JS. */
+.tt-head-scroll{
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+/* Scrolling region: the vertical scrollbar lives here and only spans the track. */
+.tt-body-scroll{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: auto;
+  overflow-y: scroll;
+}
 
+.timetable-head,
 .timetable{
   display:grid;
   grid-template-columns: 56px repeat(5, minmax(120px, 1fr));
-  grid-template-rows: 56px 1fr;
   min-width: 820px;
   position:relative;
 }
+.timetable-head{
+  grid-template-rows: 56px;
+  /* extra trailing column matches the body's scrollbar so columns line up */
+  grid-template-columns: 56px repeat(5, minmax(120px, 1fr)) var(--sbw);
+}
+.timetable{ grid-template-rows: auto; }
 
 .tt-corner{
   grid-row: 1;
   grid-column: 1;
   border-bottom: 1px solid var(--border);
-  position: sticky; top:0; left:0;
   background: var(--surface);
-  /*background: color-mix(in srgb, var(--surface) calc(var(--timetable-opacity, 1) * 100%), transparent);*/
-  z-index:3;
+}
+.tt-head-gutter{
+  grid-row: 1;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .tt-daycol-head{
@@ -617,10 +640,7 @@ button, select, input{ font-family: inherit; color: inherit; }
   border-left: 1px solid var(--border);
   padding: .7rem .5rem;
   text-align:center;
-  position: sticky; top:0;
   background: var(--surface);
-  /*background: color-mix(in srgb, var(--surface) calc(var(--timetable-opacity, 1) * 100%), transparent);*/
-  z-index:6;
 }
 .tt-daycol-head .dow{
   font-family: var(--font-heading);
@@ -639,7 +659,7 @@ button, select, input{ font-family: inherit; color: inherit; }
    matching gridline always land on the exact same y position. */
 .tt-hours{
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
   position: relative;
 }
 .tt-hourlabel{
@@ -655,7 +675,7 @@ button, select, input{ font-family: inherit; color: inherit; }
 
 .tt-track{
   grid-column: 2 / -1;
-  grid-row: 2;
+  grid-row: 1;
   position: relative;
   display:grid;
   grid-template-columns: repeat(5, 1fr);

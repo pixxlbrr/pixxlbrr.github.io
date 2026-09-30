@@ -845,10 +845,15 @@
     $("#week-label").innerHTML = fmtWeekLabel(state.weekStart, numDays);
 
     const tt = $("#timetable");
+    const ttHead = $("#timetable-head");
     tt.innerHTML = "";
+    ttHead.innerHTML = "";
     tt.style.gridTemplateColumns = `56px repeat(${numDays}, minmax(120px, 1fr))`;
-    tt.style.gridTemplateRows = `56px 1fr`;
+    tt.style.gridTemplateRows = `auto`;
     tt.style.minWidth = `${56 + numDays * 130}px`;
+    ttHead.style.gridTemplateColumns = `56px repeat(${numDays}, minmax(120px, 1fr)) var(--sbw)`;
+    ttHead.style.gridTemplateRows = `56px`;
+    ttHead.style.minWidth = `calc(${56 + numDays * 130}px + var(--sbw))`;
 
     const totalMin = DAY_END_MIN - DAY_START_MIN;
     const numHours = HOURS.length - 1;
@@ -856,7 +861,7 @@
     const bodyHeight = numHours * rowHeight;
 
     // corner cell
-    tt.appendChild(el("div", "tt-corner"));
+    ttHead.appendChild(el("div", "tt-corner"));
 
     const today = new Date();
 
@@ -866,8 +871,9 @@
       const head = el("div", "tt-daycol-head" + (sameDay(dayDate, today) ? " is-today" : ""));
       head.appendChild(el("div", "dow", dayShort[i]));
       head.appendChild(el("div", "ddate", fmtDayDate(dayDate)));
-      tt.appendChild(head);
+      ttHead.appendChild(head);
     }
+    ttHead.appendChild(el("div", "tt-head-gutter"));
 
     // hour-label column: same fixed pixel height and same top:% math as the
     // track below, so labels line up exactly with the hour gridlines.
@@ -997,8 +1003,29 @@
 
     tt.appendChild(track);
 
+    syncTimetableHeader();
     renderLegend();
   }
+
+  /* Keep the fixed day-header strip aligned with the scrolling body:
+     match the body's vertical scrollbar width and mirror its horizontal scroll. */
+  function syncTimetableHeader() {
+    const wrap = $("#timetable-wrap");
+    const body = $("#timetable-body-scroll");
+    const head = $("#timetable-head-scroll");
+    if (!wrap || !body || !head || wrap.hidden) return;
+    const sbw = body.offsetWidth - body.clientWidth;
+    wrap.style.setProperty("--sbw", `${sbw}px`);
+    head.scrollLeft = body.scrollLeft;
+  }
+
+  (function wireTimetableScrollSync() {
+    const body = $("#timetable-body-scroll");
+    const head = $("#timetable-head-scroll");
+    if (!body || !head) return;
+    body.addEventListener("scroll", () => { head.scrollLeft = body.scrollLeft; }, { passive: true });
+    window.addEventListener("resize", syncTimetableHeader);
+  })();
 
   function renderLegend() {
     const legend = $("#legend");

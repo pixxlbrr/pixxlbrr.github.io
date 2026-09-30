@@ -271,8 +271,17 @@
 
   <!-- ============ TIMETABLE GRID ============ -->
   <main class="timetable-wrap" id="timetable-wrap" hidden>
-    <div class="timetable" id="timetable">
-      <!-- built by script.js -->
+    <!-- day headers: fixed above the scrolling body, horizontally synced by script.js -->
+    <div class="tt-head-scroll" id="timetable-head-scroll">
+      <div class="timetable-head" id="timetable-head">
+        <!-- built by script.js -->
+      </div>
+    </div>
+    <!-- only this region scrolls, so its scrollbar spans just the track -->
+    <div class="tt-body-scroll" id="timetable-body-scroll">
+      <div class="timetable" id="timetable">
+        <!-- built by script.js -->
+      </div>
     </div>
   </main>
 
