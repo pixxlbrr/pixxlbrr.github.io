@@ -594,6 +594,8 @@ button, select, input{ font-family: inherit; color: inherit; }
   box-shadow: var(--shadow);
   height: 800px;
 }
+.timetable-wrap[hidden]{ display:none; } /* keep [hidden] working despite display:flex above */
+
 /* Day-header strip: never scrolls vertically, so the body's scrollbar starts
    below it. Its horizontal position is mirrored from the body via JS. */
 .tt-head-scroll{
