@@ -376,6 +376,10 @@ button, select, input{ font-family: inherit; color: inherit; }
 }
 .save-preset-btn:hover{ opacity: .9; }
 
+#font-heading {
+  font-family: var(--font-heading);
+}
+
 .reset-btn{
   width:100%;
   padding: .6rem;
