@@ -1368,6 +1368,127 @@
     });
   }
 
+
+  /* ============================================================
+     FIRST-VISIT NOTICE + CONTACT FORM
+     ============================================================ */
+  const LS_KEY_SEEN_NOTICE = "timetable.seenNotice.v1";
+  // Messages are delivered by FormSubmit (https://formsubmit.co), which emails
+  // each submission to this address. No backend is needed on our side.
+  const CONTACT_EMAIL = "contact.tmed@gmail.com";
+  const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
+
+  let lastFocusBeforeModal = null;
+
+  function openModal(id) {
+    lastFocusBeforeModal = document.activeElement;
+    $("#" + id + "-scrim").hidden = false;
+    $("#" + id + "-modal").hidden = false;
+  }
+  function closeModal(id) {
+    $("#" + id + "-scrim").hidden = true;
+    $("#" + id + "-modal").hidden = true;
+    if (lastFocusBeforeModal && lastFocusBeforeModal.focus) lastFocusBeforeModal.focus();
+  }
+
+  function closeNotice() {
+    if ($("#notice-modal").hidden) return;
+    try { localStorage.setItem(LS_KEY_SEEN_NOTICE, "1"); } catch (e) { /* storage unavailable */ }
+    closeModal("notice");
+  }
+
+  function maybeShowNotice() {
+    let seen = false;
+    try { seen = localStorage.getItem(LS_KEY_SEEN_NOTICE) === "1"; } catch (e) { /* treat as first visit */ }
+    if (seen) return;
+    openModal("notice");
+    $("#notice-ok").focus();
+  }
+
+  function openContact() {
+    setContactStatus("", "");
+    $("#contact-submit").disabled = false;
+    openModal("contact");
+    $("#contact-name").focus();
+  }
+  function closeContact() {
+    if ($("#contact-modal").hidden) return;
+    closeModal("contact");
+  }
+
+  function setContactStatus(text, kind) {
+    const el = $("#contact-status");
+    el.textContent = text;
+    el.className = "form-status" + (kind ? " " + kind : "");
+  }
+
+  async function submitContact(e) {
+    e.preventDefault();
+    const nameEl = $("#contact-name");
+    const emailEl = $("#contact-email");
+    const msgEl = $("#contact-message");
+    const name = nameEl.value.trim();
+    const email = emailEl.value.trim();
+    const message = msgEl.value.trim();
+
+    [nameEl, emailEl, msgEl].forEach((el) => el.classList.remove("invalid"));
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!name || !emailOk || !message) {
+      if (!name) nameEl.classList.add("invalid");
+      if (!emailOk) emailEl.classList.add("invalid");
+      if (!message) msgEl.classList.add("invalid");
+      setContactStatus(!emailOk && email ? "Please enter a valid email address." : "Please fill in all fields.", "error");
+      return;
+    }
+
+    // Bots fill the hidden honeypot; pretend success and drop the message.
+    if ($("#contact-honey").value) {
+      setContactStatus("Thanks, your message has been sent.", "ok");
+      return;
+    }
+
+    const btn = $("#contact-submit");
+    btn.disabled = true;
+    setContactStatus("Sending…", "");
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,            // FormSubmit uses this as the Reply-To address
+          message,
+          _subject: "tMed contact form: " + name,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) === "false") throw new Error(data.message || "Request failed");
+
+      setContactStatus("Thanks, your message has been sent.", "ok");
+      $("#contact-form").reset();
+      setTimeout(closeContact, 1800);
+    } catch (err) {
+      btn.disabled = false;
+      setContactStatus("Sorry, that didn't send. Please try again in a moment.", "error");
+    }
+  }
+
+  function wireNoticeAndContact() {
+    $("#notice-ok").addEventListener("click", closeNotice);
+
+    $("#contact-open").addEventListener("click", openContact);
+    $("#contact-close").addEventListener("click", closeContact);
+    $("#contact-cancel").addEventListener("click", closeContact);
+    $("#contact-scrim").addEventListener("click", closeContact);
+    $("#contact-form").addEventListener("submit", submitContact);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeContact(); // the first-visit notice is dismissed only via "Got it"
+    });
+  }
+
   /* ============================================================
      INIT
      ============================================================ */
@@ -1396,6 +1517,8 @@
     if (compactMQ.addEventListener) compactMQ.addEventListener("change", onCompactChange);
     else compactMQ.addListener(onCompactChange);
     loadVerseOfDay();
+    wireNoticeAndContact();
+    maybeShowNotice();
   }
 
   document.addEventListener("DOMContentLoaded", init);
