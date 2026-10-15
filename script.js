@@ -730,7 +730,8 @@
           start: c.start, end: c.end,
           teachers: c.teachers || "",
           location: c.location || "",
-          groups: c.groups || ""
+          groups: c.groups || "",
+          slides: c.slides || ""
         });
       });
     }
@@ -767,7 +768,7 @@
           title: c.title || "MedSoc event",
           sub: "MedSoc",
           start: c.start, end: c.end,
-          teachers: "", location: c.location || "", link: c.link || "",
+          teachers: "", location: c.location || "", info: c.info || "",
           groups: ""
         });
       });
@@ -1072,11 +1073,20 @@
     row("Teachers", it.teachers ? escapeHTML(it.teachers) : "");
     row("Location", it.location ? escapeHTML(it.location) : "");
     row("Groups", it.groups ? escapeHTML(it.groups) : "");
-    if (it.link) {
-      dl.appendChild(el("dt", null, "Link"));
+    row("Slides", it.slides ? escapeHTML(it.groups) : "");
+    if (it.slides) {
+      dl.appendChild(el("dt", null, "Slides"));
       const dd = el("dd");
-      const a = el("a", null, "More info");
-      a.href = it.link; a.target = "_blank"; a.rel = "noopener noreferrer";
+      const a = el("a", null, "Link");
+      a.href = it.slides; a.target = "_blank"; a.rel = "noopener noreferrer";
+      dd.appendChild(a);
+      dl.appendChild(dd);
+    }
+    if (it.info) {
+      dl.appendChild(el("dt", null, "Info"));
+      const dd = el("dd");
+      const a = el("a", null, "Link");
+      a.href = it.info; a.target = "_blank"; a.rel = "noopener noreferrer";
       dd.appendChild(a);
       dl.appendChild(dd);
     }

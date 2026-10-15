@@ -8,7 +8,8 @@ const classes = [
         title: "Space Occupying Lesions",
         teachers: "Natasha Kumar, Sophia Champion, Jacob Fairhall",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -19,7 +20,8 @@ const classes = [
         title: "Cranial cavity and Introduction to the brain",
         teachers: "Kosta Kotsidis",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -30,7 +32,8 @@ const classes = [
         title: "Molecular biology of cell growth and neoplasia",
         teachers: "Frances Byrne",
         groups: "",
-        location: "recording"
+        location: "recording",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -41,7 +44,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "D8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -52,7 +56,8 @@ const classes = [
         title: "This is your Brain",
         teachers: "Tom Duncan",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -63,7 +68,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "D6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -74,7 +80,8 @@ const classes = [
         title: "This is your Brain",
         teachers: "Tom Duncan",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -85,7 +92,8 @@ const classes = [
         title: "Forebrain: Anatomical Organisation & Cortical Function",
         teachers: "Kosta Kotsidis",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -96,7 +104,8 @@ const classes = [
         title: "Basic Cellular Physiology of Brain Function",
         teachers: "Catherine Guo",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -107,7 +116,8 @@ const classes = [
         title: "Neuro-imaging",
         teachers: "Michael Green",
         groups: "",
-        location: "Ritchie Th"
+        location: "Ritchie Th",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -118,7 +128,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "B8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -129,7 +140,8 @@ const classes = [
         title: "This is your Brain",
         teachers: "Tom Duncan",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -140,7 +152,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "B6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -151,7 +164,8 @@ const classes = [
         title: "This is your Brain",
         teachers: "Tom Duncan",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -162,7 +176,8 @@ const classes = [
         title: "Biology of Normal Ageing",
         teachers: "Linda Ferrington",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -173,7 +188,8 @@ const classes = [
         title: "Neuron Ultrastructure",
         teachers: "Kosta Kotsidis",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -184,7 +200,8 @@ const classes = [
         title: "Intracranial Space-Occupying Lesions - Pathology",
         teachers: "Sophia Champion",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -195,7 +212,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "C8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -206,7 +224,8 @@ const classes = [
         title: "The Brain and Self",
         teachers: "Natasha Kumar",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -217,7 +236,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "C6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -228,7 +248,8 @@ const classes = [
         title: "The Brain and Self",
         teachers: "Natasha Kumar",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -239,7 +260,8 @@ const classes = [
         title: "Physiological Mechanisms of Neuronal Potentials",
         teachers: "Catherine Guo",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -250,7 +272,8 @@ const classes = [
         title: "Pharmacological manipulation of neurotransmitters",
         teachers: "Natasha Kumar",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -261,7 +284,8 @@ const classes = [
         title: "Synaptic Transmission – Mechanisms and Plasticity",
         teachers: "Catherine Guo",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -272,7 +296,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "A8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -283,7 +308,8 @@ const classes = [
         title: "The Brain and Self",
         teachers: "Natasha Kumar",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -294,7 +320,8 @@ const classes = [
         title: "Cranial cavity and Introduction to Brain",
         teachers: "Kosta Kotsidis",
         groups: "C1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -305,7 +332,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "A6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -316,7 +344,8 @@ const classes = [
         title: "The Brain and Self",
         teachers: "Natasha Kumar",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -327,7 +356,8 @@ const classes = [
         title: "Cranial cavity and Introduction to Brain",
         teachers: "Kosta Kotsidis",
         groups: "B1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -338,7 +368,8 @@ const classes = [
         title: "Cranial cavity and Introduction to Brain",
         teachers: "Kosta Kotsidis",
         groups: "D5,10,A5,10,C9,10,B9,10",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -349,7 +380,8 @@ const classes = [
         title: "Membrane potentials",
         teachers: "Catherine Guo",
         groups: "A6-9,A1-4",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -360,7 +392,8 @@ const classes = [
         title: "Cranial cavity and Introduction to Brain",
         teachers: "Kosta Kotsidis",
         groups: "D1-4,D6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -371,7 +404,8 @@ const classes = [
         title: "Membrane potentials",
         teachers: "Catherine Guo",
         groups: "B9-10,C9-10,B1,2,C1,2",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -382,7 +416,8 @@ const classes = [
         title: "Cranial cavity and Introduction to Brain",
         teachers: "Kosta Kotsidis",
         groups: "A1-4,A6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -393,7 +428,8 @@ const classes = [
         title: "Membrane potentials",
         teachers: "Catherine Guo",
         groups: "D5,10,A5,10,D6-9",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -404,7 +440,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "A10,D10",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -415,7 +452,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "B10,C10",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -426,7 +464,8 @@ const classes = [
         title: "Forebrain: Internal Capsule & subcortical tracts",
         teachers: "Reza Shirazi",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -437,7 +476,8 @@ const classes = [
         title: "Central Somatosensory System",
         teachers: "Ismail Devecioglu",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -448,7 +488,8 @@ const classes = [
         title: "Intracrainal Space Occupying Lesions",
         teachers: "Andrew Dubovyi, Martin Weber",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -459,7 +500,8 @@ const classes = [
         title: "Intracrainal Space Occupying Lesions",
         teachers: "Andrew Dubovyi, Martin Weber",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -470,7 +512,8 @@ const classes = [
         title: "Pathology SOL",
         teachers: "Sophia Champion",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -481,7 +524,8 @@ const classes = [
         title: "Pathology SOL",
         teachers: "Sophia Champion",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -492,7 +536,8 @@ const classes = [
         title: "Pathology SOL",
         teachers: "Sophia Champion",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -503,7 +548,8 @@ const classes = [
         title: "Membrane potentials",
         teachers: "Catherine Guo",
         groups: "B3-7,C3.1",
-        location: "WW120"
+        location: "WW120",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -514,7 +560,8 @@ const classes = [
         title: "Membrane potentials",
         teachers: "Catherine Guo",
         groups: "B8,D1-4",
-        location: "WW120"
+        location: "WW120",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -525,7 +572,8 @@ const classes = [
         title: "Membrane potentials",
         teachers: "Catherine Guo",
         groups: "C3.2-8",
-        location: "WW120"
+        location: "WW120",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -536,7 +584,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "D6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -547,7 +596,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "D3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -558,7 +608,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "D1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -569,7 +620,8 @@ const classes = [
         title: "Nutrition for the Older Adult",
         teachers: "Ryan Anthony",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -580,7 +632,8 @@ const classes = [
         title: "Meningitis",
         teachers: "Fang Liu",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -591,7 +644,8 @@ const classes = [
         title: "Intracrainal Space Occupying Lesions",
         teachers: "Andrew Dubovyi, Martin Weber",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -602,7 +656,8 @@ const classes = [
         title: "Intracrainal Space Occupying Lesions",
         teachers: "Andrew Dubovyi, Martin Weber",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -613,7 +668,8 @@ const classes = [
         title: "Behavioural Screening of CNS Drugs (Pharmacology; Neurophysiology)",
         teachers: "Natasha Kumar",
         groups: "C",
-        location: "WWG06"
+        location: "WWG06",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -624,7 +680,8 @@ const classes = [
         title: "Behavioural Screening of CNS Drugs (Pharmacology; Neurophysiology)",
         teachers: "Natasha Kumar",
         groups: "D",
-        location: "WWG06"
+        location: "WWG06",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -635,7 +692,8 @@ const classes = [
         title: "Pathology SOL",
         teachers: "Sophia Champion",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -646,7 +704,8 @@ const classes = [
         title: "Harry has hydrocephalus",
         teachers: "Kosta Kotsidis",
         groups: "A,C",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -657,7 +716,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "B6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -668,7 +728,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "B3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -679,7 +740,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "B1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -690,7 +752,8 @@ const classes = [
         title: "Ethics: consent, how can it be informed",
         teachers: "Sarah Baldwin",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -701,7 +764,8 @@ const classes = [
         title: "Motor System 1 - Reflex",
         teachers: "Frederic Von Wegner",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -712,7 +776,8 @@ const classes = [
         title: "Caring for older adults",
         teachers: "Louise Baird, Katya Numbers, Natasha Kumar",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -723,7 +788,8 @@ const classes = [
         title: "Caring for older adults",
         teachers: "Louise Baird, Katya Numbers, Natasha Kumar",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -734,7 +800,8 @@ const classes = [
         title: "Behavioural Screening of CNS Drugs (Pharmacology; Neurophysiology)",
         teachers: "Natasha Kumar",
         groups: "A",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -745,7 +812,8 @@ const classes = [
         title: "Behavioural Screening of CNS Drugs (Pharmacology; Neurophysiology)",
         teachers: "Natasha Kumar",
         groups: "B",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -756,7 +824,8 @@ const classes = [
         title: "Harry has hydrocephalus",
         teachers: "Kosta Kotsidis",
         groups: "B,D",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -767,7 +836,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "C6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -778,7 +848,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "C3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -789,7 +860,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "C1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -800,7 +872,8 @@ const classes = [
         title: "Information Session on the Prac Exam",
         teachers: "Marty Le Nedelec",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -811,7 +884,8 @@ const classes = [
         title: "Motor System 2 - Spinal pathways and motor cortices",
         teachers: "Frederic Von Wegner",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -822,7 +896,8 @@ const classes = [
         title: "Brainstem",
         teachers: "Kosta Kotsidis",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -833,7 +908,8 @@ const classes = [
         title: "Caring for older adults",
         teachers: "Louise Baird, Katya Numbers, Natasha Kumar",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -844,7 +920,8 @@ const classes = [
         title: "Caring for older adults",
         teachers: "Louise Baird, Katya Numbers, Natasha Kumar",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -855,7 +932,8 @@ const classes = [
         title: "Forebrain: Functional Localisation & Subcortical Tracts",
         teachers: "Kosta Kotsidis",
         groups: "C1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -866,7 +944,8 @@ const classes = [
         title: "Forebrain: Functional Localisation & Subcortical Tracts",
         teachers: "Kosta Kotsidis",
         groups: "B1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -877,7 +956,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "A6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -888,7 +968,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "A3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -899,7 +980,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "A1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -910,7 +992,8 @@ const classes = [
         title: "Forebrain: Functional Localisation & Subcortical Tracts",
         teachers: "Kosta Kotsidis",
         groups: "D5,10,A5,10,C9,10,B9,10",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -921,7 +1004,8 @@ const classes = [
         title: "Forebrain: Functional Localisation & Subcortical Tracts",
         teachers: "Kosta Kotsidis",
         groups: "D1-4,D6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -932,7 +1016,8 @@ const classes = [
         title: "Forebrain: Functional Localisation & Subcortical Tracts",
         teachers: "Kosta Kotsidis",
         groups: "A1-4,A6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -943,7 +1028,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "D1,2,9,A3",
-        location: "WW122"
+        location: "WW122",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -954,7 +1040,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "B1,2,10,D10",
-        location: "WW122"
+        location: "WW122",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -965,7 +1052,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "D6,7,8,5",
-        location: "WW122"
+        location: "WW122",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -976,7 +1064,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "A4,B5,D3,4",
-        location: "WW123"
+        location: "WW123",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -987,7 +1076,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "B3,4,C3,4",
-        location: "WW123"
+        location: "WW123",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -998,7 +1088,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "B6-9",
-        location: "WW123"
+        location: "WW123",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1009,7 +1100,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "A5,D5",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1020,7 +1112,8 @@ const classes = [
         title: "Neurological history and examination",
         teachers: "Kalli Spencer",
         groups: "B5,C5",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1031,7 +1124,8 @@ const classes = [
         title: "Stroke Plenary",
         teachers: "Gary Velan, Ken Butcher",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1042,7 +1136,8 @@ const classes = [
         title: "Cerebral Blood Supply",
         teachers: "Kosta Kotsidis",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1053,7 +1148,8 @@ const classes = [
         title: "Consent and Law",
         teachers: "Sarah Baldwin",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1064,7 +1160,8 @@ const classes = [
         title: "Consent and Law",
         teachers: "Sarah Baldwin",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1075,7 +1172,8 @@ const classes = [
         title: "Stroke: No Postcode Untouched",
         teachers: "Fred von Wegner, Linda Ferrington",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1086,7 +1184,8 @@ const classes = [
         title: "Stroke: No Postcode Untouched",
         teachers: "Fred von Wegner, Linda Ferrington",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1097,7 +1196,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "C1,2,9,10",
-        location: "WW122"
+        location: "WW122",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1108,7 +1208,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "A1,2,9,10",
-        location: "WW122"
+        location: "WW122",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1119,7 +1220,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "C5-8",
-        location: "WW123"
+        location: "WW123",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1130,7 +1232,8 @@ const classes = [
         title: "Analysis of cell ageing",
         teachers: "Dhanushi Abeygunawardena",
         groups: "A5-8",
-        location: "WW123"
+        location: "WW123",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1141,7 +1244,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "D1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1152,7 +1256,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "D8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1163,7 +1268,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "D6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1174,7 +1280,8 @@ const classes = [
         title: "Cerebrovascular Disease 1: Infarction",
         teachers: "Gary Velan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1185,7 +1292,8 @@ const classes = [
         title: "Cerebrovascular Disease 2: Haemorrhage",
         teachers: "Gary Velan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1196,7 +1304,8 @@ const classes = [
         title: "Consent and Law",
         teachers: "Sarah Baldwin",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1207,7 +1316,8 @@ const classes = [
         title: "Consent and Law",
         teachers: "Sarah Baldwin",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1218,7 +1328,8 @@ const classes = [
         title: "Stroke: No Postcode Untouched",
         teachers: "Fred von Wegner, Linda Ferrington",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1229,7 +1340,8 @@ const classes = [
         title: "Stroke: No Postcode Untouched",
         teachers: "Fred von Wegner, Linda Ferrington",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1240,7 +1352,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "B1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1251,7 +1364,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "B8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1262,7 +1376,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "B6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1273,7 +1388,8 @@ const classes = [
         title: "Vision 1: Eye and optics",
         teachers: "Catherine Guo",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1284,7 +1400,8 @@ const classes = [
         title: "Clinical Skils in AEB",
         teachers: "Kalli Spencer, Sue Britton",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1295,7 +1412,8 @@ const classes = [
         title: "Stroke Cases",
         teachers: "Fred von Wegner, Amir Ariff",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1306,7 +1424,8 @@ const classes = [
         title: "Stroke Cases",
         teachers: "Fred von Wegner, Amir Ariff",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1317,7 +1436,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "C1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1328,7 +1448,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "C8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1339,7 +1460,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "C6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1350,7 +1472,8 @@ const classes = [
         title: "Vision 2: Central pathways/cortex",
         teachers: "Catherine Guo",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1361,7 +1484,8 @@ const classes = [
         title: "Pharmacological approaches to stroke",
         teachers: "Nicole Jones",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1372,7 +1496,8 @@ const classes = [
         title: "Cranial Nerves 1",
         teachers: "Tom Duncan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1383,7 +1508,8 @@ const classes = [
         title: "Stroke Cases",
         teachers: "Fred von Wegner, Amir Ariff",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1394,7 +1520,8 @@ const classes = [
         title: "Stroke Cases",
         teachers: "Fred von Wegner, Amir Ariff",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1405,7 +1532,8 @@ const classes = [
         title: "Brain and Blood Supply",
         teachers: "Kosta Kotsidis",
         groups: "C1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1416,7 +1544,8 @@ const classes = [
         title: "Brain and Blood Supply",
         teachers: "Kosta Kotsidis",
         groups: "B1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1427,7 +1556,8 @@ const classes = [
         title: "Myotatic reflexes and the H-reflex",
         teachers: "Fred van Wegner",
         groups: "B5-10,C9-10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1438,7 +1568,8 @@ const classes = [
         title: "Myotatic reflexes and the H-reflex",
         teachers: "Fred van Wegner",
         groups: "D3-10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1449,7 +1580,8 @@ const classes = [
         title: "Examining the Neurological System: Upper and lower limbs",
         teachers: "Kalli Spencer",
         groups: "A1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1460,7 +1592,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "A8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1471,7 +1604,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "A6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1482,7 +1616,8 @@ const classes = [
         title: "Brain and Blood Supply",
         teachers: "Kosta Kotsidis",
         groups: "D5,10,A5,10,C9,10,B9,10",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1493,7 +1628,8 @@ const classes = [
         title: "Brain and Blood Supply",
         teachers: "Kosta Kotsidis",
         groups: "D1-4,D6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1504,7 +1640,8 @@ const classes = [
         title: "Brain and Blood Supply",
         teachers: "Kosta Kotsidis",
         groups: "A1-4,A6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1515,7 +1652,8 @@ const classes = [
         title: "Myotatic reflexes and the H-reflex",
         teachers: "Fred van Wegner",
         groups: "C1-4,A8-9,D1,2",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1526,7 +1664,8 @@ const classes = [
         title: "Myotatic reflexes and the H-reflex",
         teachers: "Fred van Wegner",
         groups: "C5-8,B1-4",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1537,7 +1676,8 @@ const classes = [
         title: "Myotatic reflexes and the H-reflex",
         teachers: "Fred van Wegner",
         groups: "A1-7,10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1548,7 +1688,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "D3,D4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1559,7 +1700,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "A10,D10",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1570,7 +1712,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "B10,C10",
-        location: "WWG39"
+        location: "WWG39",
+        slides: "ended here"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1581,7 +1724,8 @@ const classes = [
         title: "Cranial Nerves 2",
         teachers: "Tom Duncan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1592,7 +1736,8 @@ const classes = [
         title: "The Older Aboriginal Person - Introduction",
         teachers: "Miriam Cavanagh",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1603,7 +1748,8 @@ const classes = [
         title: "CNS: Normal and abnormal (Histology, Pathology)",
         teachers: "Sophia Champion, Reza Shirazi",
         groups: "D",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1614,7 +1760,8 @@ const classes = [
         title: "CNS: Normal and abnormal (Histology, Pathology)",
         teachers: "Sophia Champion, Reza Shirazi",
         groups: "C",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1625,7 +1772,8 @@ const classes = [
         title: "Pathology stroke",
         teachers: "Martin Weber",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1636,7 +1784,8 @@ const classes = [
         title: "Pathology stroke",
         teachers: "Martin Weber",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1647,7 +1796,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "B6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1658,7 +1808,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "B3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1669,7 +1820,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "B1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1680,7 +1832,8 @@ const classes = [
         title: "Stroke Outcomes / Rehabilitation",
         teachers: "Steven Faux",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1691,7 +1844,8 @@ const classes = [
         title: "Cranial Nerves 3",
         teachers: "Tom Duncan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1702,7 +1856,8 @@ const classes = [
         title: "Older Indigenous People",
         teachers: "Miriam, Melody, Frederic von Wegner",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1713,7 +1868,8 @@ const classes = [
         title: "Older Indigenous People",
         teachers: "Miriam, Melody, Frederic von Wegner",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1724,7 +1880,8 @@ const classes = [
         title: "Pathology stroke",
         teachers: "Martin Weber",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1735,7 +1892,8 @@ const classes = [
         title: "Pathology stroke",
         teachers: "Martin Weber",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1746,7 +1904,8 @@ const classes = [
         title: "CNS: Normal and abnormal (Histology, Pathology)",
         teachers: "Sophia Champion, Reza Shirazi",
         groups: "B",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1757,7 +1916,8 @@ const classes = [
         title: "CNS: Normal and abnormal (Histology, Pathology)",
         teachers: "Sophia Champion, Reza Shirazi",
         groups: "A",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1768,7 +1928,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "D6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1779,7 +1940,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "C6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1790,7 +1952,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "C3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1801,7 +1964,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "C1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1812,7 +1976,8 @@ const classes = [
         title: "Higher Cortical Function 1 - Memory",
         teachers: "John Power",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1823,7 +1988,8 @@ const classes = [
         title: "QMP - Weighing the Evidence",
         teachers: "Amir Ariff",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1834,7 +2000,8 @@ const classes = [
         title: "Blood Supply",
         teachers: "Kosta Kotsidis",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1845,7 +2012,8 @@ const classes = [
         title: "Older Indigenous People",
         teachers: "Miriam, Melody, Frederic von Wegner",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1856,7 +2024,8 @@ const classes = [
         title: "Older Indigenous People",
         teachers: "Miriam, Melody, Frederic von Wegner",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1867,7 +2036,8 @@ const classes = [
         title: "Cranial nerves",
         teachers: "Tom Duncan",
         groups: "C1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1878,7 +2048,8 @@ const classes = [
         title: "Cranial nerves",
         teachers: "Tom Duncan",
         groups: "B1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1889,7 +2060,8 @@ const classes = [
         title: "Visual Physiology",
         teachers: "Catherine Guo",
         groups: "B5-10,C9-10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1900,7 +2072,8 @@ const classes = [
         title: "Visual Physiology",
         teachers: "Catherine Guo",
         groups: "D3-10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1911,7 +2084,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "A6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1922,7 +2096,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "A3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1933,7 +2108,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "A1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1944,7 +2120,8 @@ const classes = [
         title: "Cranial nerves",
         teachers: "Tom Duncan",
         groups: "D5,10,A5,10,C9,10,B9,10",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1955,7 +2132,8 @@ const classes = [
         title: "Cranial nerves",
         teachers: "Tom Duncan",
         groups: "D1-4,D6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1966,7 +2144,8 @@ const classes = [
         title: "Cranial nerves",
         teachers: "Tom Duncan",
         groups: "A1-4,A6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1977,7 +2156,8 @@ const classes = [
         title: "Visual Physiology",
         teachers: "Catherine Guo",
         groups: "C1-4,A8-9,D1,2",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1988,7 +2168,8 @@ const classes = [
         title: "Visual Physiology",
         teachers: "Catherine Guo",
         groups: "C5-8,B1-4",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -1999,7 +2180,8 @@ const classes = [
         title: "Visual Physiology",
         teachers: "Catherine Guo",
         groups: "A1-7,10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2010,7 +2192,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "D1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2021,7 +2204,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "A5,D5",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2032,7 +2216,8 @@ const classes = [
         title: "Common problems in the elderly and the CNS examination",
         teachers: "Kalli Spencer",
         groups: "B5,C5",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2043,7 +2228,8 @@ const classes = [
         title: "Functional Anatomy of the Basal Ganglia",
         teachers: "Tom Duncan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2054,7 +2240,8 @@ const classes = [
         title: "Limbic System and Emotions",
         teachers: "Tom Duncan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2065,7 +2252,8 @@ const classes = [
         title: "Cranial Nerve Lesion",
         teachers: "Tom Duncan",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2076,7 +2264,8 @@ const classes = [
         title: "Cranial Nerve Lesion",
         teachers: "Tom Duncan",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2087,7 +2276,8 @@ const classes = [
         title: "QMP Weighing the Evidence",
         teachers: "Amir Ariff",
         groups: "B",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2098,7 +2288,8 @@ const classes = [
         title: "Cranial Nerve Lesions",
         teachers: "Tom Duncan",
         groups: "A,C",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2109,7 +2300,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "D8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2120,7 +2312,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "D6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2131,7 +2324,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "D1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2142,7 +2336,8 @@ const classes = [
         title: "Higher Cortical Function 2 - Sleep",
         teachers: "Felix Aplin",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2153,7 +2348,8 @@ const classes = [
         title: "Cerebellum",
         teachers: "Tom Duncan",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2164,7 +2360,8 @@ const classes = [
         title: "Advance Directives",
         teachers: "Frank Brennan, Louise Baird",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2175,7 +2372,8 @@ const classes = [
         title: "Cranial Nerve Lesion",
         teachers: "Tom Duncan",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2186,7 +2384,8 @@ const classes = [
         title: "Cranial Nerve Lesion",
         teachers: "Tom Duncan",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2197,7 +2396,8 @@ const classes = [
         title: "QMP Weighing the Evidence",
         teachers: "Amir Ariff",
         groups: "C",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2208,7 +2408,8 @@ const classes = [
         title: "QMP Weighing the Evidence",
         teachers: "Amir Ariff",
         groups: "D",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2219,7 +2420,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "B1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2230,7 +2432,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "B8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2241,7 +2444,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "B6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2252,7 +2456,8 @@ const classes = [
         title: "Barbara Parkinsons",
         teachers: "Fred von Wegnner, James Colebatch",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2263,7 +2468,8 @@ const classes = [
         title: "Treatments for Parkinson's Disease",
         teachers: "James Colebatch",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2274,7 +2480,8 @@ const classes = [
         title: "Treatment Strategies for Parkinson's disease",
         teachers: "Natasha Kumar",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2285,7 +2492,8 @@ const classes = [
         title: "Treatment Strategies for Parkinson's disease",
         teachers: "Natasha Kumar",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2296,7 +2504,8 @@ const classes = [
         title: "QMP Weighing the Evidence",
         teachers: "Amir Ariff",
         groups: "A",
-        location: "WWG06-07"
+        location: "WWG06-07",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2307,7 +2516,8 @@ const classes = [
         title: "Cranial Nerve Lesions",
         teachers: "Tom Duncan",
         groups: "B,D",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2318,7 +2528,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "C1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2329,7 +2540,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "C8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2340,7 +2552,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "C6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2351,7 +2564,8 @@ const classes = [
         title: "Pharmacology of Alzheimers Disease",
         teachers: "Natasha Kumar",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: "https://emed.med.unsw.edu.au/Map.nsf/by_unid/BFBF4FAF115DD14CCA25733900062D84/$FILE/AEB.S.Neurodegen.L.PhrmNeuroD_26_NK.pdf"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2362,7 +2576,8 @@ const classes = [
         title: "Ethics - Whose Decision?",
         teachers: "Linda Sheahan",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: "https://emed.med.unsw.edu.au/Map.nsf/by_unid/1526DA21BFC93C49CA25733900062AE4/$FILE/AEB.S.Neurodegen.L.Decisions_26_LS.pdf"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2373,7 +2588,8 @@ const classes = [
         title: "Neurodegenerative Disease",
         teachers: "Scott Kim",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: "https://emed.med.unsw.edu.au/Map.nsf/by_unid/D948A8D4B4D22AEBCA257D8F00046E34/$FILE/AEB.S.Neurodegen.L.Neurodegen_26_SK.pdf"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2384,7 +2600,8 @@ const classes = [
         title: "Treatment Strategies for Parkinson's disease",
         teachers: "Natasha Kumar",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2395,7 +2612,8 @@ const classes = [
         title: "Treatment Strategies for Parkinson's disease",
         teachers: "Natasha Kumar",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2406,7 +2624,8 @@ const classes = [
         title: "Brainstem",
         teachers: "Tom Duncan",
         groups: "C1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2417,7 +2636,8 @@ const classes = [
         title: "Brainstem",
         teachers: "Tom Duncan",
         groups: "B1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2428,7 +2648,8 @@ const classes = [
         title: "Pharmacology for Neurodegenerative Disease: from biomarkers to treatment",
         teachers: "Natasha Kumar",
         groups: "B5-10,C9-10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2439,7 +2660,8 @@ const classes = [
         title: "Pharmacology for Neurodegenerative Disease: from biomarkers to treatment",
         teachers: "Natasha Kumar",
         groups: "D3-10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2450,7 +2672,8 @@ const classes = [
         title: "Examining the neurological system: cranial nerves",
         teachers: "Kalli Spencer",
         groups: "A1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2461,7 +2684,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "A8,9",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2472,7 +2696,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "A6,7",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2483,7 +2708,8 @@ const classes = [
         title: "Brainstem",
         teachers: "Tom Duncan",
         groups: "D5,10,A5,10,C9,10,B9,10",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2494,7 +2720,8 @@ const classes = [
         title: "Brainstem",
         teachers: "Tom Duncan",
         groups: "D1-4,D6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2505,7 +2732,8 @@ const classes = [
         title: "Brainstem",
         teachers: "Tom Duncan",
         groups: "A1-4,A6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2516,7 +2744,8 @@ const classes = [
         title: "Pharmacology for Neurodegenerative Disease: from biomarkers to treatment",
         teachers: "Natasha Kumar",
         groups: "C1-4,A8-9,D1,2",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2527,7 +2756,8 @@ const classes = [
         title: "Pharmacology for Neurodegenerative Disease: from biomarkers to treatment",
         teachers: "Natasha Kumar",
         groups: "C5-8,B1-4",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2538,7 +2768,8 @@ const classes = [
         title: "Pharmacology for Neurodegenerative Disease: from biomarkers to treatment",
         teachers: "Natasha Kumar",
         groups: "A1-7,10",
-        location: "WW115"
+        location: "WW115",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2549,7 +2780,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "A10,D10",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2560,7 +2792,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "B10,C10",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2571,7 +2804,8 @@ const classes = [
         title: "Introduction to dementia",
         teachers: "William Lawson",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2582,7 +2816,8 @@ const classes = [
         title: "Aboriginal Ageing and Dementia",
         teachers: "Louise Lavrencic, Alison Timbery",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2593,7 +2828,8 @@ const classes = [
         title: "Ethics 2 Whose Decision Is it?",
         teachers: "Sarah Baldwin",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2604,7 +2840,8 @@ const classes = [
         title: "Ethics 2 Whose Decision Is it?",
         teachers: "Sarah Baldwin",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2615,7 +2852,8 @@ const classes = [
         title: "Poject and Assignment presentations",
         teachers: "Frederic Von Wegner",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2626,7 +2864,8 @@ const classes = [
         title: "Poject and Assignment presentations",
         teachers: "Frederic Von Wegner",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2637,7 +2876,8 @@ const classes = [
         title: "Recovery and rehabilitation",
         teachers: "Greg Bowman",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2648,7 +2888,8 @@ const classes = [
         title: "Recovery and rehabilitation",
         teachers: "Greg Bowman",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2659,7 +2900,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "D6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2670,7 +2912,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "D3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2681,7 +2924,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "D1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2692,7 +2936,8 @@ const classes = [
         title: "Aged Care & Health Care Systems",
         teachers: "Peter Gonski",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2703,7 +2948,8 @@ const classes = [
         title: "Brain Recovery",
         teachers: "Russell Chander",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2714,7 +2960,8 @@ const classes = [
         title: "Ethics 2 Whose Decision Is it?",
         teachers: "Sarah Baldwin",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2725,7 +2972,8 @@ const classes = [
         title: "Ethics 2 Whose Decision Is it?",
         teachers: "Sarah Baldwin",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2736,7 +2984,8 @@ const classes = [
         title: "Poject and Assignment presentations",
         teachers: "Frederic Von Wegner",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2747,7 +2996,8 @@ const classes = [
         title: "Poject and Assignment presentations",
         teachers: "Frederic Von Wegner",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2758,7 +3008,8 @@ const classes = [
         title: "Recovery and rehabilitation",
         teachers: "Greg Bowman",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2769,7 +3020,8 @@ const classes = [
         title: "Recovery and rehabilitation",
         teachers: "Greg Bowman",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2780,7 +3032,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "B6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2791,7 +3044,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "B3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2802,7 +3056,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "B1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2813,7 +3068,8 @@ const classes = [
         title: "Psychiatry of Neurodegeneration",
         teachers: "Henry Brodaty",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2824,7 +3080,8 @@ const classes = [
         title: "Healthy Ageing: Psychosocial Aspects",
         teachers: "Carmelle Peisah",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2835,7 +3092,8 @@ const classes = [
         title: "Cerebellum",
         teachers: "Tom Duncan",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2846,7 +3104,8 @@ const classes = [
         title: "Atypical PD and Palliative Care",
         teachers: "Fred von Wegner, Sarah Baldwin",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2857,7 +3116,8 @@ const classes = [
         title: "Atypical PD and Palliative Care",
         teachers: "Fred von Wegner, Sarah Baldwin",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2868,7 +3128,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "C6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2879,7 +3140,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "C3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2890,7 +3152,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "C1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2901,7 +3164,8 @@ const classes = [
         title: "Exercise rehabilitation for neurodegenerative diseases",
         teachers: "Yoshiro Okubo",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2912,7 +3176,8 @@ const classes = [
         title: "Traumatic Brain Injury",
         teachers: "Nicodemus Tedla",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2923,7 +3188,8 @@ const classes = [
         title: "Atypical PD and Palliative Care",
         teachers: "Fred von Wegner, Sarah Baldwin",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2934,7 +3200,8 @@ const classes = [
         title: "Atypical PD and Palliative Care",
         teachers: "Fred von Wegner, Sarah Baldwin",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2945,7 +3212,8 @@ const classes = [
         title: "The basal ganglia and limbic system",
         teachers: "Tom Duncan",
         groups: "C1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2956,7 +3224,8 @@ const classes = [
         title: "The basal ganglia and limbic system",
         teachers: "Tom Duncan",
         groups: "B1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2967,7 +3236,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "A6-10",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2978,7 +3248,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "A3,4",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2989,7 +3260,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "A1,2",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3000,7 +3272,8 @@ const classes = [
         title: "The basal ganglia and limbic system",
         teachers: "Tom Duncan",
         groups: "D5,10,A5,10,C9,10,B9,10",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3011,7 +3284,8 @@ const classes = [
         title: "The basal ganglia and limbic system",
         teachers: "Tom Duncan",
         groups: "D1-4,D6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3022,7 +3296,8 @@ const classes = [
         title: "The basal ganglia and limbic system",
         teachers: "Tom Duncan",
         groups: "A1-4,A6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3033,7 +3308,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "A5,D5",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3044,7 +3320,8 @@ const classes = [
         title: "Neuro Simulated Patient SOCA and MOCK OSCE Practice Session",
         teachers: "Kalli Spencer",
         groups: "B5,C5",
-        location: "WWG39"
+        location: "WWG39",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3055,7 +3332,8 @@ const classes = [
         title: "Sectional Neuroanatomy & Imaging",
         teachers: "Reza Shirazi",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3066,7 +3344,8 @@ const classes = [
         title: "Caring for the patients with dementia",
         teachers: "Fiona Tran",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3077,7 +3356,8 @@ const classes = [
         title: "Basal Ganglia",
         teachers: "Tom Duncan",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3088,7 +3368,8 @@ const classes = [
         title: "Living with dementia",
         teachers: "Louise Baird, Katya Numbers, Sarah Baldwin",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3099,7 +3380,8 @@ const classes = [
         title: "Living with dementia",
         teachers: "Louise Baird, Katya Numbers, Sarah Baldwin",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3110,7 +3392,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "D1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3121,7 +3404,8 @@ const classes = [
         title: "Physiology Review",
         teachers: "Catherine Guo",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3132,7 +3416,8 @@ const classes = [
         title: "Integrating Concepts",
         teachers: "Tom Duncan, Frederick Von Wegner, Natasha Kumar",
         groups: "",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3143,7 +3428,8 @@ const classes = [
         title: "Living with dementia",
         teachers: "Louise Baird, Katya Numbers, Sarah Baldwin",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3154,7 +3440,8 @@ const classes = [
         title: "Living with dementia",
         teachers: "Louise Baird, Katya Numbers, Sarah Baldwin",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3165,7 +3452,8 @@ const classes = [
         title: "Human Aspects of Living with neuro-degenerative diseases (Psychiatry)",
         teachers: "Katya Numbers",
         groups: "C",
-        location: "WWG06"
+        location: "WWG06",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3176,7 +3464,8 @@ const classes = [
         title: "Human Aspects of Living with neuro-degenerative diseases (Psychiatry)",
         teachers: "Katya Numbers",
         groups: "D",
-        location: "WWG06"
+        location: "WWG06",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3187,7 +3476,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "B1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3198,7 +3488,8 @@ const classes = [
         title: "Neuroanatomy Review",
         teachers: "Tom Duncan, Kosta Kotsidis",
         groups: "",
-        location: "Oshane 104"
+        location: "Oshane 104",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3209,7 +3500,8 @@ const classes = [
         title: "Review, Wrap up, Practice",
         teachers: "Natasha Kumar",
         groups: "A",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3220,7 +3512,8 @@ const classes = [
         title: "Review, Wrap up, Practice",
         teachers: "Natasha Kumar",
         groups: "B",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3231,7 +3524,8 @@ const classes = [
         title: "Human Aspects of Living with neuro-degenerative diseases (Psychiatry)",
         teachers: "Katya Numbers",
         groups: "B",
-        location: "WWG06"
+        location: "WWG06",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3242,7 +3536,8 @@ const classes = [
         title: "Human Aspects of Living with neuro-degenerative diseases (Psychiatry)",
         teachers: "Katya Numbers",
         groups: "A",
-        location: "WWG06"
+        location: "WWG06",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3253,7 +3548,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "C1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3264,7 +3560,8 @@ const classes = [
         title: "Pharmacology Review",
         teachers: "Natasha Kumar",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3275,7 +3572,8 @@ const classes = [
         title: "Formative Feedback",
         teachers: "Frederick von Wegner, Tom Duncan, Natasha Kumar",
         groups: "",
-        location: "online"
+        location: "online",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3286,7 +3584,8 @@ const classes = [
         title: "Review, Wrap up, Practice",
         teachers: "Natasha Kumar",
         groups: "D",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3297,7 +3596,8 @@ const classes = [
         title: "Review, Wrap up, Practice",
         teachers: "Natasha Kumar",
         groups: "C",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3308,7 +3608,8 @@ const classes = [
         title: "Coronal Slices of the Forebrain",
         teachers: "Tom Duncan",
         groups: "C1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3319,7 +3620,8 @@ const classes = [
         title: "Coronal Slices of the Forebrain",
         teachers: "Tom Duncan",
         groups: "B1-8",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3330,7 +3632,8 @@ const classes = [
         title: "The neurological system: putting it all together",
         teachers: "Kalli Spencer",
         groups: "A1-5",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3341,7 +3644,8 @@ const classes = [
         title: "Coronal Slices of the Forebrain",
         teachers: "Tom Duncan",
         groups: "D5,10,A5,10,C9,10,B9,10",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3352,7 +3656,8 @@ const classes = [
         title: "Coronal Slices of the Forebrain",
         teachers: "Tom Duncan",
         groups: "D1-4,D6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3363,7 +3668,8 @@ const classes = [
         title: "Coronal Slices of the Forebrain",
         teachers: "Tom Duncan",
         groups: "A1-4,A6-9",
-        location: "BS 8A"
+        location: "BS 8A",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3374,7 +3680,8 @@ const classes = [
         title: "AEB End of Course Exam",
         teachers: "",
         groups: "",
-        location: ""
+        location: "",
+        slides: ""
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -3385,6 +3692,7 @@ const classes = [
         title: "Y1&2 Prac exams",
         teachers: "",
         groups: "",
-        location: ""
+        location: "",
+        slides: ""
     }
 ]
