@@ -25,8 +25,8 @@
   ];
 
   // CBS activities are suspended (except Bible Study) for this one week.
-  const CBS_BREAK_WEEK_KEY = "2026-10-19";
-  const CBS_BREAK_EXEMPT = "Bible Study";
+  /*const CBS_BREAK_WEEK_KEY = "2026-10-19";*/
+  /*const CBS_BREAK_EXEMPT = "Bible Study";*/
 
   const DEFAULT_CAT_COLORS = {
     plenary: "#cb7d46",
