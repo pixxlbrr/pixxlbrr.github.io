@@ -740,7 +740,7 @@
     //    only for activities the user has individually ticked on, and honouring the break week --
     cbsGroups.forEach((slots, type) => {
       if (!state.cbsVisible[type]) return;
-      if (weekKey === CBS_BREAK_WEEK_KEY && type !== CBS_BREAK_EXEMPT) return;
+      /*if (weekKey === CBS_BREAK_WEEK_KEY && type !== CBS_BREAK_EXEMPT) return;*/
       const idx = getCbsSelectedIndex(type, weekKey);
       const slot = slots[idx];
       if (!slot || slot.day !== dayName) return;
