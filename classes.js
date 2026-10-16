@@ -2337,7 +2337,7 @@ const classes = [
         teachers: "Felix Aplin",
         groups: "",
         location: "online",
-        slides: ""
+        slides: "https://emed.med.unsw.edu.au/Map.nsf/by_unid/90E6B24D286D5903CA25733900062ACE/$FILE/AEB.S.StrokeScen.L.HCF1SlpLan_26_FA.pdf"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2349,7 +2349,7 @@ const classes = [
         teachers: "Tom Duncan",
         groups: "",
         location: "online",
-        slides: ""
+        slides: "https://emed.med.unsw.edu.au/Map.nsf/by_unid/58D0B05E984684B7CA25733900062AF2/$FILE/AEB.S.StrokeScen.L.Cerebellum_26_TD.pdf"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
@@ -2469,7 +2469,7 @@ const classes = [
         teachers: "James Colebatch",
         groups: "",
         location: "Oshane 104",
-        slides: ""
+        slides: "https://emed.med.unsw.edu.au/Map.nsf/by_unid/47B4A684F06E6419CA25733900062AB7/$FILE/AEB.S.Neurodegen.L.Parkinsns_26_JC.pdf"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
