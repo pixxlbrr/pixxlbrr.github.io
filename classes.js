@@ -2805,7 +2805,7 @@ const classes = [
         teachers: "William Lawson",
         groups: "",
         location: "online",
-        slides: ""
+        slides: "https://emed.med.unsw.edu.au/Map.nsf/wLAFByUniqueKey/EFD46E639308DA5BCA257D8F00046E33/$FILE/AEB.S.Neurodegen.L.Dementia_26_WL.pdf"
     },
     {
         courseName: "MFAC1526: Ageing & Endings B",
