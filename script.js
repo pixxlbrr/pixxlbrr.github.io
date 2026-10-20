@@ -1073,7 +1073,6 @@
     row("Teachers", it.teachers ? escapeHTML(it.teachers) : "");
     row("Location", it.location ? escapeHTML(it.location) : "");
     row("Groups", it.groups ? escapeHTML(it.groups) : "");
-    row("Slides", it.slides ? escapeHTML(it.groups) : "");
     if (it.slides) {
       dl.appendChild(el("dt", null, "Slides"));
       const dd = el("dd");
@@ -1500,6 +1499,55 @@
   }
 
   /* ============================================================
+     SLIDES  (slides.json is written by the GitHub Action, see sync.py)
+     Fills in c.slides for any class that doesn't already have a link.
+     ============================================================ */
+  function normTitle(s) {
+    return String(s || "").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "");
+  }
+  function normTime(t) {
+    const [h, m] = String(t || "").split(":");
+    return parseInt(h, 10) + ":" + (m || "00");
+  }
+
+  async function loadSlides() {
+    try {
+      const res = await fetch("slides.json", { cache: "no-cache" });
+      if (!res.ok) return;
+      const list = await res.json();
+
+      const byDate = new Map();   // "YYYY-MM-DD" -> [entries]
+      list.forEach((s) => {
+        if (!byDate.has(s.date)) byDate.set(s.date, []);
+        byDate.get(s.date).push(s);
+      });
+
+      let changed = false;
+      (classes || []).forEach((c) => {
+        if (!c.date || /^https?:\/\//i.test(c.slides || "")) return;   // keep hand-entered links
+        const [d, m, y] = c.date.split("/");
+        const cands = byDate.get(`${y}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`);
+        if (!cands) return;
+
+        const t = normTitle(c.title);
+        // 1) same date + same title
+        let hit = cands.find((s) => normTitle(s.title) === t);
+        // 2) same date + same start time + one title contains the other
+        if (!hit && t) {
+          const st = normTime(c.start);
+          hit = cands.find((s) => {
+            const u = normTitle(s.title);
+            return normTime(s.start) === st && u && (u.includes(t) || t.includes(u));
+          });
+        }
+        if (hit) { c.slides = hit.url; changed = true; }
+      });
+
+      if (changed) render();
+    } catch (e) { /* no slides.json yet (or opened from file://) - just show no links */ }
+  }
+
+  /* ============================================================
      INIT
      ============================================================ */
   function init() {
@@ -1520,6 +1568,7 @@
 
     wireControls();
     render();
+    loadSlides();
     // Re-render the header label when crossing the 480px breakpoint
     const onCompactChange = () => {
       if (state.weekStart) $("#week-label").innerHTML = fmtWeekLabel(state.weekStart, state.showWeekends ? 7 : 5);
