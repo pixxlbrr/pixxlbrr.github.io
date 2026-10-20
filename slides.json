@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-10-19",
+    "start": "09:00",
+    "end": "10:00",
+    "title": "Introduction to dementia",
+    "type": "Lecture",
+    "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/EFD46E639308DA5BCA257D8F00046E33/$FILE/AEB.S.Neurodegen.L.Dementia_26_WL.pdf"
+  },
+  {
+    "date": "2026-10-19",
+    "start": "10:00",
+    "end": "11:00",
+    "title": "Aboriginal Ageing and Dementia",
+    "type": "Lecture",
+    "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/E3E65FCBE4AB3CEECA2582E40029BFD4/$FILE/AEB.S.Neurodegen.L.AgeDemen_26_LL%20AT.pdf"
+  },
+  {
+    "date": "2026-10-20",
+    "start": "10:00",
+    "end": "11:00",
+    "title": "Brain Recovery",
+    "type": "Lecture",
+    "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/569E24B21E3D406DCA257339000626D6/$FILE/AEB.S.Neurodegen.L.NeuroPlsty_26_RC.pdf"
+  }
+]
