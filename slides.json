@@ -17,10 +17,34 @@
   },
   {
     "date": "2026-10-20",
+    "start": "09:00",
+    "end": "10:00",
+    "title": "Aged Care and Health care systems",
+    "type": "Lecture",
+    "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/140017A186F12A1ACA257339000629F9/$FILE/AEB.S.Neurodegen.L.AgedCare_26_PG.pdf"
+  },
+  {
+    "date": "2026-10-20",
     "start": "10:00",
     "end": "11:00",
     "title": "Brain Recovery",
     "type": "Lecture",
     "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/569E24B21E3D406DCA257339000626D6/$FILE/AEB.S.Neurodegen.L.NeuroPlsty_26_RC.pdf"
+  },
+  {
+    "date": "2026-10-21",
+    "start": "09:00",
+    "end": "10:00",
+    "title": "Psychiatry of Neurodegeneration",
+    "type": "Lecture",
+    "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/6218C354D6008ACACA258B8D0002EDD4/$FILE/AEB.S.Neurodegen.L.PsychNeuro_26_HB.pdf"
+  },
+  {
+    "date": "2026-10-21",
+    "start": "10:00",
+    "end": "11:00",
+    "title": "Healthy ageing: psycho-social aspects",
+    "type": "Lecture",
+    "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/63ADCC9F74BDD757CA25733900062B17/$FILE/AEB.S.Neurodegen.L.HlthAge_26_CP.pdf"
   }
 ]
