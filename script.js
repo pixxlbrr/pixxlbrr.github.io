@@ -1530,12 +1530,19 @@
     return m ? parseInt(m[1], 10) + ":" + m[2] : cellText(v);
   }
 
-  async function loadClasses() {
-    const res = await fetch(CLASSES_FILE, { cache: "no-cache" });
-    if (!res.ok) throw new Error(CLASSES_FILE + ": HTTP " + res.status);
+  // Fetches an .xlsx and returns its rows as objects keyed by the header row.
+  // Uses the named sheet if present, otherwise the first sheet in the workbook.
+  async function readSheetRows(file, sheetName) {
+    const res = await fetch(file, { cache: "no-cache" });
+    if (!res.ok) throw new Error(file + ": HTTP " + res.status);
     const wb = XLSX.read(await res.arrayBuffer(), { type: "array" });
-    const ws = wb.Sheets[CLASSES_SHEET] || wb.Sheets[wb.SheetNames[0]];
-    classes = XLSX.utils.sheet_to_json(ws, { raw: true, defval: "" })
+    const ws = (sheetName && wb.Sheets[sheetName]) || wb.Sheets[wb.SheetNames[0]];
+    return XLSX.utils.sheet_to_json(ws, { raw: true, defval: "" });
+  }
+
+  async function loadClasses() {
+    const rows = await readSheetRows(CLASSES_FILE, CLASSES_SHEET);
+    classes = rows
       .map((r) => ({
         courseName: cellText(r.courseName),
         date: xlDate(r.date),
@@ -1549,6 +1556,51 @@
         slides: cellText(r.slides),
       }))
       .filter((c) => c.date && c.title);   // ignore blank/junk rows
+  }
+
+  /* ============================================================
+     CBS + MEDSOC EVENTS  (read from cbs_events.xlsx / medsoc_events.xlsx)
+     First sheet of each file is used, whatever it is called.
+     cbs_events.xlsx    columns: type, day, start, end
+     medsoc_events.xlsx columns: date, start, end, title, location, info
+     ============================================================ */
+  const CBS_FILE = "cbs_events.xlsx";
+  const MEDSOC_FILE = "medsoc_events.xlsx";
+  let cbsEvents = [];
+  let medsocEvents = [];
+
+  // "tuesday", " Tue " -> "Tuesday" (so a capitalisation slip can't hide an event)
+  function normDayName(v) {
+    const t = cellText(v).toLowerCase();
+    if (!t) return "";
+    const i = DAY_NAMES_ALL.findIndex((d) => d.toLowerCase() === t || d.slice(0, 3).toLowerCase() === t);
+    return i === -1 ? cellText(v) : DAY_NAMES_ALL[i];
+  }
+
+  async function loadCbsEvents() {
+    const rows = await readSheetRows(CBS_FILE);
+    cbsEvents = rows
+      .map((r) => ({
+        type: cellText(r.type),
+        day: normDayName(r.day),
+        start: xlTime(r.start),
+        end: xlTime(r.end),
+      }))
+      .filter((c) => c.type && c.day && c.start && c.end);   // ignore blank/junk rows
+  }
+
+  async function loadMedsocEvents() {
+    const rows = await readSheetRows(MEDSOC_FILE);
+    medsocEvents = rows
+      .map((r) => ({
+        date: xlDate(r.date),
+        start: xlTime(r.start),
+        end: xlTime(r.end),
+        title: cellText(r.title),
+        location: cellText(r.location),
+        info: cellText(r.info),
+      }))
+      .filter((c) => c.date && c.start && c.end);   // ignore blank/junk rows
   }
 
   /* ============================================================
@@ -1634,9 +1686,15 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Load the spreadsheet first; if that fails the page still starts (just without class events).
-    loadClasses()
-      .catch((e) => console.error("Could not load " + CLASSES_FILE + ":", e))
-      .then(init);
+    // Load all three spreadsheets in parallel. If one fails the page still starts
+    // (just without that file's events) and the others are unaffected.
+    const loaders = [
+      [loadClasses, CLASSES_FILE],
+      [loadCbsEvents, CBS_FILE],
+      [loadMedsocEvents, MEDSOC_FILE]
+    ];
+    Promise.all(loaders.map(([fn, file]) =>
+      fn().catch((e) => console.error("Could not load " + file + ":", e))
+    )).then(init);
   });
 })();
