@@ -28,10 +28,21 @@ FILE_RE = re.compile(r"/wLAFByUniqueKey/([0-9A-F]{32})/\$FILE/([^/?#]+)", re.I)
 s = requests.Session()
 
 
-def get(url):
-    r = s.get(url, timeout=30)
-    r.raise_for_status()
-    return r.text
+def get(url, tries=4):
+    """GET with a long read timeout and retries: eMed's Map pages are slow."""
+    for attempt in range(1, tries + 1):
+        try:
+            r = s.get(url, timeout=(15, 120))   # (connect, read) seconds
+            if r.status_code >= 500:
+                raise requests.HTTPError(f"HTTP {r.status_code}")
+            r.raise_for_status()
+            return r.text
+        except (requests.Timeout, requests.ConnectionError, requests.HTTPError) as e:
+            if attempt == tries:
+                raise
+            wait = 5 * attempt
+            print(f"  retry {attempt}/{tries - 1} in {wait}s ({type(e).__name__})")
+            time.sleep(wait)
 
 
 def parse_time(t):
@@ -79,13 +90,25 @@ def load_existing():
         return {}
 
 
+def map_file_url(map_href, cache):
+    """Fetch a Map page once and return its PDF url (None if no file)."""
+    # popup links are http://; go straight to https to avoid a slow redirect
+    map_url = urljoin(BASE, map_href).replace("http://", "https://", 1)
+    if map_url not in cache:
+        m = BeautifulSoup(get(map_url), "html.parser")
+        f = m.select_one("#attach_url a[href*='$FILE']")
+        cache[map_url] = stable_url(f["href"]) if f else None
+        time.sleep(1)  # be gentle (only after a real request)
+    return cache[map_url]
+
+
 # ---- 1. log in (same form fields as the eMed login page) ----
 login = s.post(f"{BASE}/names.nsf?Login",
                data={"%%ModDate": "2E6D726F662D6469",
                      "Username": ZID,
                      "Password": PASSWORD,
                      "RedirectTo": "/homepage.nsf?Open"},
-               timeout=30)
+               timeout=(15, 120))
 # A rejected login just serves the login form again.
 if 'name="Password"' in login.text:
     sys.exit("Login failed - eMed returned the login form again. "
@@ -93,51 +116,64 @@ if 'name="Password"' in login.text:
 
 # ---- 2. event IDs from the scheduler's XML feed ----
 feed = get(f"{BASE}/Timetable.NSF/XMLeventsUID.xml?OpenView&RestrictToCategory={ZID}")
-event_ids = set(re.findall(r'id="?([0-9A-F]{32})', feed, flags=re.I))  # adjust to real XML
+event_ids = sorted(set(re.findall(r'id="?([0-9A-F]{32})', feed, flags=re.I)))  # adjust to real XML
 
 if not event_ids:
     # Don't overwrite slides.json with nothing if login/parsing broke.
     sys.exit("No events found - login or feed parsing probably failed. "
              f"{OUT} left untouched.")
+print(f"{len(event_ids)} events in timetable")
 
 # ---- 3. popup -> Map page -> PDF link ----
-found = {}
-for eid in event_ids:
-    popup = BeautifulSoup(
-        get(f"{BASE}/Timetable.NSF/0/{eid}?OpenDocument&AutoFramed&floatbar=false"),
-        "html.parser")
+existing = load_existing()
+map_cache = {}
+found, failed = {}, 0
 
-    a = popup.find("a", string=re.compile("Link to this activity in the Map"))
-    if not a:
-        continue
-
-    fields = popup_fields(popup)
+for n, eid in enumerate(event_ids, 1):
     try:
-        date_iso = popup_date(popup, fields)
-        times = TIME_RE.findall(fields["Start Time/End Time"])
-        start, end = parse_time(times[0]), parse_time(times[1])
-    except (KeyError, IndexError, ValueError) as e:
-        print(f"Skipping {eid}: could not read date/time ({e})")
-        continue
+        popup = BeautifulSoup(
+            get(f"{BASE}/Timetable.NSF/0/{eid}?OpenDocument&AutoFramed&floatbar=false"),
+            "html.parser")
 
-    m = BeautifulSoup(get(urljoin(BASE, a["href"])), "html.parser")
-    f = m.select_one("#attach_url a[href*='$FILE']")
-    if not f:
-        continue  # no file uploaded for this activity (yet)
+        a = popup.find("a", string=re.compile("Link to this activity in the Map"))
+        if not a:
+            continue
 
-    rec = {
-        "date": date_iso,
-        "start": start,
-        "end": end,
-        "title": fields.get("Title", ""),
-        "type": fields.get("Activity Type", ""),
-        "url": stable_url(f["href"]),
-    }
-    found[record_key(rec)] = rec
-    time.sleep(1)  # be gentle
+        fields = popup_fields(popup)
+        try:
+            date_iso = popup_date(popup, fields)
+            times = TIME_RE.findall(fields["Start Time/End Time"])
+            start, end = parse_time(times[0]), parse_time(times[1])
+        except (KeyError, IndexError, ValueError) as e:
+            print(f"Skipping {eid}: could not read date/time ({e})")
+            continue
+
+        rec = {
+            "date": date_iso,
+            "start": start,
+            "end": end,
+            "title": fields.get("Title", ""),
+            "type": fields.get("Activity Type", ""),
+        }
+        key = record_key(rec)
+
+        if key in existing:                 # already have this link: no need to re-fetch
+            continue
+
+        url = map_file_url(a["href"], map_cache)
+        if not url:
+            continue                        # no file uploaded for this activity (yet)
+
+        rec["url"] = url
+        found[key] = rec
+        print(f"[{n}/{len(event_ids)}] {rec['date']} {rec['title']}")
+
+    except (requests.RequestException, OSError) as e:
+        failed += 1
+        print(f"[{n}/{len(event_ids)}] Skipping {eid}: {type(e).__name__}: {e}")
 
 # ---- 4. merge with what we already had, so a partial run never deletes links ----
-merged = load_existing()
+merged = dict(existing)
 merged.update(found)
 results = sorted(merged.values(), key=lambda r: (r["date"], r["start"], r["title"]))
 
@@ -145,4 +181,7 @@ with open(OUT, "w", encoding="utf-8") as fh:
     json.dump(results, fh, indent=2, ensure_ascii=False)
     fh.write("\n")
 
-print(f"{len(found)} links found this run, {len(results)} in {OUT}")
+print(f"{len(found)} new links this run, {failed} events skipped after errors, "
+      f"{len(results)} total in {OUT}")
+if failed and not found and not existing:
+    sys.exit("Every request failed - eMed may be down or blocking this runner.")

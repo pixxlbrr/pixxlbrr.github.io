@@ -1,0 +1,57 @@
+name: sync-slides
+
+on:
+  schedule:
+    # 9am Sydney, Mon-Fri. Cron is UTC-only and Sydney's offset changes with
+    # daylight saving, so run at both 22:00 and 23:00 UTC (the previous day,
+    # hence Sun-Thu) and let the "Check Sydney time" step pick the right one.
+    - cron: "0 22 * * 0-4"   # = 9am AEDT (UTC+11, early Oct to early Apr)
+    - cron: "0 23 * * 0-4"   # = 9am AEST (UTC+10, early Apr to early Oct)
+  workflow_dispatch:          # manual runs skip the time check
+
+permissions:
+  contents: write             # so the bot can commit slides.json
+
+concurrency: sync-slides
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check Sydney time
+        id: gate
+        run: |
+          hour=$(TZ=Australia/Sydney date +%H)
+          dow=$(TZ=Australia/Sydney date +%u)   # 1=Mon ... 7=Sun
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$hour" = "09" ] && [ "$dow" -le 5 ]; }; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Sydney time is not 9am on a weekday - skipping this run."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v5
+        if: steps.gate.outputs.go == 'true'
+
+      - uses: actions/setup-python@v6
+        if: steps.gate.outputs.go == 'true'
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4
+        if: steps.gate.outputs.go == 'true'
+
+      - run: python sync.py
+        if: steps.gate.outputs.go == 'true'
+        env:
+          ZID: ${{ secrets.ZID }}
+          ZPASS: ${{ secrets.ZPASS }}
+
+      - name: Commit slides.json
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add slides.json
+          git diff --cached --quiet || (git commit -m "Update slide links" && git push)
