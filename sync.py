@@ -29,7 +29,8 @@ WANTED_TYPES = {"lecture", "scenario plenary"}
 
 # /Map.nsf/wLAFByUniqueKey/<32-hex UNID>/$FILE/<name>.pdf/<name>.pdf
 FILE_RE = re.compile(r"/wLAFByUniqueKey/([0-9A-F]{32})/\$FILE/([^/?#]+)", re.I)
-EVENT_RE = re.compile(r'<event\s+id="([0-9A-F]{32})"[^>]*>(.*?)</event>', re.I | re.S)
+EVENT_RE = re.compile(r'<event\b[^>]*?\bid=["\']?([0-9A-F]{32})["\']?[^>]*>(.*?)</event>', re.I | re.S)
+DATETIME_RE = re.compile(r"(\d{4}-\d{2}-\d{2})[ T](\d{1,2}:\d{2})")
 BR_RE = re.compile(r"<br\s*/?>|&lt;br\s*/?&gt;", re.I)
 
 s = requests.Session()
@@ -53,8 +54,11 @@ def get(url, tries=4):
 
 
 def tag(block, name):
-    m = re.search(rf"<{name}>(.*?)</{name}>", block, re.I | re.S)
-    return m.group(1).strip() if m else ""
+    """Inner text of <name>...</name>, with any CDATA wrapper removed."""
+    m = re.search(rf"<{name}\b[^>]*>(.*?)</{name}>", block, re.I | re.S)
+    if not m:
+        return ""
+    return re.sub(r"^<!\[CDATA\[|\]\]>$", "", m.group(1).strip()).strip()
 
 
 def parse_feed(xml):
@@ -65,20 +69,16 @@ def parse_feed(xml):
     which a strict XML parser would reject."""
     events = []
     for eid, block in EVENT_RE.findall(xml):
-        text = re.sub(r"^<!\[CDATA\[|\]\]>$", "", tag(block, "text").strip())
-        parts = [html.unescape(p).strip() for p in BR_RE.split(text)]
-        try:
-            sd = datetime.strptime(tag(block, "start_date")[:16], "%Y-%m-%d %H:%M")
-            ed = datetime.strptime(tag(block, "end_date")[:16], "%Y-%m-%d %H:%M")
-        except ValueError:
-            continue
-        if len(parts) < 3:
+        parts = [html.unescape(p).strip() for p in BR_RE.split(tag(block, "text"))]
+        sm = DATETIME_RE.search(tag(block, "start_date"))
+        em = DATETIME_RE.search(tag(block, "end_date"))
+        if not sm or not em or len(parts) < 3:
             continue
         events.append({
             "id": eid,
-            "date": sd.strftime("%Y-%m-%d"),
-            "start": sd.strftime("%H:%M"),
-            "end": ed.strftime("%H:%M"),
+            "date": sm.group(1),
+            "start": sm.group(2).zfill(5),
+            "end": em.group(2).zfill(5),
             "type": parts[0],
             "course": parts[1],
             "title": parts[2],
@@ -148,7 +148,10 @@ if __name__ == "__main__":
     events = parse_feed(feed)
     if not events:
         # Don't overwrite slides.json with nothing if login/parsing broke.
-        sys.exit("No events found in the feed - login or parsing probably failed. "
+        # Print the shape of the response (not credentials) to help debug.
+        print(f"Feed length: {len(feed)} chars; '<event' appears {feed.lower().count('<event')} times")
+        print("Feed starts with:", repr(feed[:300].replace(ZID, "<zid>")))
+        sys.exit("No events parsed from the feed - login or parsing probably failed. "
                  f"{OUT} left untouched.")
 
     ALL_DAYS = os.environ.get("ALL_DAYS", "").lower() in ("1", "true", "yes")
