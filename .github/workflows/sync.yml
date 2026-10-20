@@ -2,38 +2,50 @@ name: sync-slides
 
 on:
   schedule:
-    # 9am Sydney, Mon-Fri. Cron is UTC-only and Sydney's offset changes with
-    # daylight saving, so run at both 22:00 and 23:00 UTC (the previous day,
-    # hence Sun-Thu) and let the "Check Sydney time" step pick the right one.
-    - cron: "0 22 * * 0-4"   # = 9am AEDT (UTC+11, early Oct to early Apr)
-    - cron: "0 23 * * 0-4"   # = 9am AEST (UTC+10, early Apr to early Oct)
-  workflow_dispatch:          # manual runs skip the time check
+    # Target (Sydney, Mon-Fri): 8:55 9:00 9:05 | 9:55 10:00 10:05 | 10:55 11:00 11:05
+    # Cron is UTC-only and Sydney's offset changes with daylight saving (+11 / +10),
+    # so both possible UTC times are listed for every slot. The "Check Sydney time"
+    # step lets through only runs that land inside the 9-11am window.
+    # Late-evening UTC times belong to the *next* Sydney day, hence Sun-Thu.
+    - cron: "55 21 * * 0-4"       # 8:55 AEDT
+    - cron: "0,5,55 22,23 * * 0-4" # 9:00 9:05 9:55 10:00 10:05 AEDT / 8:55 9:00 9:05 AEST ...
+    - cron: "0,5,55 0 * * 1-5"    # 11:00 11:05 AEDT / 10:00 10:05 10:55 AEST
+    - cron: "0,5 1 * * 1-5"       # 11:00 11:05 AEST
+  workflow_dispatch:              # manual runs skip the time check
+    inputs:
+      all_days:
+        description: "Fetch ALL dates, not just the last 3 weekdays (use to backfill)"
+        type: boolean
+        default: false
 
 permissions:
-  contents: write             # so the bot can commit slides.json
+  contents: write                 # so the bot can commit slides.json
 
 concurrency: sync-slides
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Check Sydney time
         id: gate
         run: |
-          hour=$(TZ=Australia/Sydney date +%H)
+          now=$(TZ=Australia/Sydney date +%H%M)
           dow=$(TZ=Australia/Sydney date +%u)   # 1=Mon ... 7=Sun
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$hour" = "09" ] && [ "$dow" -le 5 ]; }; then
+          echo "Sydney time now: $now (weekday $dow)"
+          # window 08:50-11:30 leaves room for GitHub's start-up delays
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$dow" -le 5 ] && [ "$now" -ge 0850 ] && [ "$now" -lt 1130 ]; }; then
             echo "go=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Sydney time is not 9am on a weekday - skipping this run."
+            echo "Outside the 9-11am weekday window - skipping this run."
             echo "go=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: steps.gate.outputs.go == 'true'
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         if: steps.gate.outputs.go == 'true'
         with:
           python-version: "3.12"
@@ -46,6 +58,7 @@ jobs:
         env:
           ZID: ${{ secrets.ZID }}
           ZPASS: ${{ secrets.ZPASS }}
+          ALL_DAYS: ${{ inputs.all_days }}
 
       - name: Commit slides.json
         if: steps.gate.outputs.go == 'true'
