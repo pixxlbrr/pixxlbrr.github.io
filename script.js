@@ -1499,6 +1499,59 @@
   }
 
   /* ============================================================
+     CLASSES  (read from classes.xlsx, sheet "timetable data")
+     Needs the SheetJS <script> in index.html, which defines XLSX.
+     Columns: courseName, date, start, end, type, title, teachers,
+              groups, location, slides
+     ============================================================ */
+  const CLASSES_FILE = "classes.xlsx";
+  const CLASSES_SHEET = "timetable data";
+  let classes = [];
+
+  const cellText = (v) => (v == null ? "" : String(v).trim());
+
+  // Excel date (serial number, or text like "14/09/2026") -> "14/09/2026"
+  function xlDate(v) {
+    if (typeof v === "number") {
+      const d = new Date(Date.UTC(1899, 11, 30) + Math.floor(v) * 86400000);
+      return String(d.getUTCDate()).padStart(2, "0") + "/" +
+             String(d.getUTCMonth() + 1).padStart(2, "0") + "/" + d.getUTCFullYear();
+    }
+    return cellText(v);
+  }
+
+  // Excel time (fraction of a day, or text like "08:30") -> "8:30"
+  function xlTime(v) {
+    if (typeof v === "number") {
+      const mins = Math.round((v % 1) * 1440);
+      return Math.floor(mins / 60) + ":" + String(mins % 60).padStart(2, "0");
+    }
+    const m = cellText(v).match(/^(\d{1,2}):(\d{2})/);
+    return m ? parseInt(m[1], 10) + ":" + m[2] : cellText(v);
+  }
+
+  async function loadClasses() {
+    const res = await fetch(CLASSES_FILE, { cache: "no-cache" });
+    if (!res.ok) throw new Error(CLASSES_FILE + ": HTTP " + res.status);
+    const wb = XLSX.read(await res.arrayBuffer(), { type: "array" });
+    const ws = wb.Sheets[CLASSES_SHEET] || wb.Sheets[wb.SheetNames[0]];
+    classes = XLSX.utils.sheet_to_json(ws, { raw: true, defval: "" })
+      .map((r) => ({
+        courseName: cellText(r.courseName),
+        date: xlDate(r.date),
+        start: xlTime(r.start),
+        end: xlTime(r.end),
+        type: cellText(r.type),
+        title: cellText(r.title),
+        teachers: cellText(r.teachers),
+        groups: cellText(r.groups),
+        location: cellText(r.location),
+        slides: cellText(r.slides),
+      }))
+      .filter((c) => c.date && c.title);   // ignore blank/junk rows
+  }
+
+  /* ============================================================
      SLIDES  (slides.json is written by the GitHub Action, see sync.py)
      Fills in c.slides for any class that doesn't already have a link.
      ============================================================ */
@@ -1580,5 +1633,10 @@
     maybeShowNotice();
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("DOMContentLoaded", () => {
+    // Load the spreadsheet first; if that fails the page still starts (just without class events).
+    loadClasses()
+      .catch((e) => console.error("Could not load " + CLASSES_FILE + ":", e))
+      .then(init);
+  });
 })();
