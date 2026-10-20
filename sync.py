@@ -79,10 +79,17 @@ def load_existing():
         return {}
 
 
-# ---- 1. log in (confirm endpoint/field names in DevTools > Network) ----
-s.post(f"{BASE}/names.nsf?Login",
-       data={"Username": ZID, "Password": PASSWORD, "RedirectTo": "/Timetable.NSF"},
-       timeout=30)
+# ---- 1. log in (same form fields as the eMed login page) ----
+login = s.post(f"{BASE}/names.nsf?Login",
+               data={"%%ModDate": "2E6D726F662D6469",
+                     "Username": ZID,
+                     "Password": PASSWORD,
+                     "RedirectTo": "/homepage.nsf?Open"},
+               timeout=30)
+# A rejected login just serves the login form again.
+if 'name="Password"' in login.text:
+    sys.exit("Login failed - eMed returned the login form again. "
+             "Check the ZID / ZPASS secrets.")
 
 # ---- 2. event IDs from the scheduler's XML feed ----
 feed = get(f"{BASE}/Timetable.NSF/XMLeventsUID.xml?OpenView&RestrictToCategory={ZID}")
