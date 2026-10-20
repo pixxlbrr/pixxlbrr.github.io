@@ -2,15 +2,14 @@ name: sync-slides
 
 on:
   schedule:
-    # Target (Sydney, Mon-Fri): 8:55 9:00 9:05 | 9:55 10:00 10:05 | 10:55 11:00 11:05
+    # Target (Sydney, Mon-Fri): 8:43 8:48 8:53 | 9:43 9:48 9:53 | 10:43 10:48 10:53
     # Cron is UTC-only and Sydney's offset changes with daylight saving (+11 / +10),
-    # so both possible UTC times are listed for every slot. The "Check Sydney time"
-    # step lets through only runs that land inside the 9-11am window.
-    # Late-evening UTC times belong to the *next* Sydney day, hence Sun-Thu.
-    - cron: "55 21 * * 0-4"       # 8:55 AEDT
-    - cron: "0,5,55 22,23 * * 0-4" # 9:00 9:05 9:55 10:00 10:05 AEDT / 8:55 9:00 9:05 AEST ...
-    - cron: "0,5,55 0 * * 1-5"    # 11:00 11:05 AEDT / 10:00 10:05 10:55 AEST
-    - cron: "0,5 1 * * 1-5"       # 11:00 11:05 AEST
+    # so both possible UTC times are covered. The "Check Sydney time" step lets
+    # through only runs that land inside the 8:40-11:30 window, which discards the
+    # three leftover triggers per day that belong to the other season.
+    # Evening UTC times belong to the *next* Sydney day, hence Sun-Thu.
+    - cron: "43,48,53 21,22,23 * * 0-4"   # 8:43-10:53 AEDT / 7:43-9:53 AEST
+    - cron: "43,48,53 0 * * 1-5"          # 11:43-11:53 AEDT (skipped) / 10:43-10:53 AEST
   workflow_dispatch:              # manual runs skip the time check
     inputs:
       all_days:
@@ -34,11 +33,11 @@ jobs:
           now=$(TZ=Australia/Sydney date +%H%M)
           dow=$(TZ=Australia/Sydney date +%u)   # 1=Mon ... 7=Sun
           echo "Sydney time now: $now (weekday $dow)"
-          # window 08:50-11:30 leaves room for GitHub's start-up delays
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$dow" -le 5 ] && [ "$now" -ge 0850 ] && [ "$now" -lt 1130 ]; }; then
+          # window 08:40-11:30 leaves room for GitHub's start-up delays
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$dow" -le 5 ] && [ "$now" -ge 0840 ] && [ "$now" -lt 1130 ]; }; then
             echo "go=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Outside the 9-11am weekday window - skipping this run."
+            echo "Outside the weekday 8:40-11:30 window - skipping this run."
             echo "go=false" >> "$GITHUB_OUTPUT"
           fi
 
