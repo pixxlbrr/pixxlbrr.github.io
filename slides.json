@@ -49,6 +49,14 @@
   },
   {
     "date": "2026-10-22",
+    "start": "09:00",
+    "end": "10:00",
+    "title": "Exercise rehabilitation for neurodegenerative diseases",
+    "type": "Lecture",
+    "url": "https://emed.med.unsw.edu.au/Map.nsf/by_unid/A8CEA4B38445F758CA2585C70035C9D9/$FILE/AEB.S.Neurodegen.L.RehabNeuro_26_YO.pdf"
+  },
+  {
+    "date": "2026-10-22",
     "start": "10:00",
     "end": "11:00",
     "title": "Traumatic Brain Injury",
