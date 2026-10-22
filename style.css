@@ -1002,5 +1002,5 @@ button, select, input{ font-family: inherit; color: inherit; }
   color: var(--accent);
   cursor: pointer;
 }
-.link-btn:hover{ text-decoration: underline; }
-.link-btn:focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px; }
+/*.link-btn:hover{ text-decoration: underline; }
+.link-btn:focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px; }*/
