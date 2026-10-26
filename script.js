@@ -1606,9 +1606,34 @@
   /* ============================================================
      SLIDES  (slides.json is written by the GitHub Action, see sync.py)
      Fills in c.slides for any class that doesn't already have a link.
+     Titles in the spreadsheet don't always match eMed word for word
+     (e.g. "Caring for the patients..." vs "Caring for patients..."),
+     so matching is tolerant: see the four steps in loadSlides().
+     If sync.py is ever changed to collect other event types, extend sameKind().
      ============================================================ */
+  const TITLE_STOPWORDS = new Set(["the", "a", "an"]);
+
+  function titleWords(s) {
+    return String(s || "").toLowerCase().replace(/&/g, " and ")
+      .split(/[^a-z0-9]+/).filter((w) => w && !TITLE_STOPWORDS.has(w));
+  }
   function normTitle(s) {
-    return String(s || "").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "");
+    return titleWords(s).join("");
+  }
+  // 0..1: shared words / all distinct words in either title
+  function titleOverlap(a, b) {
+    const A = new Set(titleWords(a)), B = new Set(titleWords(b));
+    if (!A.size || !B.size) return 0;
+    let shared = 0;
+    A.forEach((w) => { if (B.has(w)) shared++; });
+    return shared / (A.size + B.size - shared);
+  }
+  // class type code ("L53", "Plenary1") vs eMed type ("Lecture", "Scenario Plenary")
+  function sameKind(c, s) {
+    const cat = categoryOf(c.type), st = String(s.type || "").toLowerCase();
+    if (cat === "lecture") return st === "lecture";
+    if (cat === "plenary") return st === "scenario plenary";
+    return false;
   }
   function normTime(t) {
     const [h, m] = String(t || "").split(":");
@@ -1627,24 +1652,52 @@
         byDate.get(s.date).push(s);
       });
 
+      // How many classes of each kind share a date + start time (for step 4 below)
+      const slotKey = (c) => c.date + "|" + normTime(c.start) + "|" + categoryOf(c.type);
+      const slotCount = new Map();
+      (classes || []).forEach((c) => slotCount.set(slotKey(c), (slotCount.get(slotKey(c)) || 0) + 1));
+
       let changed = false;
       (classes || []).forEach((c) => {
         if (!c.date || /^https?:\/\//i.test(c.slides || "")) return;   // keep hand-entered links
         const [d, m, y] = c.date.split("/");
-        const cands = byDate.get(`${y}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`);
-        if (!cands) return;
+        // Only lecture/plenary classes get auto links (that's all sync.py collects),
+        // and only from slides of the same kind on the same date.
+        const cands = (byDate.get(`${y}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`) || [])
+          .filter((s) => sameKind(c, s));
+        if (!cands.length) return;
 
         const t = normTitle(c.title);
-        // 1) same date + same title
+        const st = normTime(c.start);
+
+        // 1) same title (ignoring case, punctuation, "the/a/an")
         let hit = cands.find((s) => normTitle(s.title) === t);
-        // 2) same date + same start time + one title contains the other
+
+        // 2) same start time + one title contains the other
         if (!hit && t) {
-          const st = normTime(c.start);
           hit = cands.find((s) => {
             const u = normTitle(s.title);
             return normTime(s.start) === st && u && (u.includes(t) || t.includes(u));
           });
         }
+
+        // 3) same start time + titles share at least half their words; best score wins
+        if (!hit) {
+          let best = 0;
+          cands.forEach((s) => {
+            if (normTime(s.start) !== st) return;
+            const score = titleOverlap(c.title, s.title);
+            if (score >= 0.5 && score > best) { best = score; hit = s; }
+          });
+        }
+
+        // 4) titles differ completely, but it's the only lecture/plenary starting at that
+        //    time in both the spreadsheet and eMed, so it must be the same session
+        if (!hit && slotCount.get(slotKey(c)) === 1) {
+          const same = cands.filter((s) => normTime(s.start) === st);
+          if (same.length === 1) hit = same[0];
+        }
+
         if (hit) { c.slides = hit.url; changed = true; }
       });
 
